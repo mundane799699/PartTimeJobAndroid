@@ -47,29 +47,27 @@ android {
     }
 
     buildTypes {
+        debug {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
         release {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
-            //签名
-            if (keyStore.exists()) {
-                println 'gank.jks signing...'
-                signingConfig signingConfigs.fir
-            } else {
-                println 'no gank.jks'
-            }
+        }
+    }
 
-            //对apk进行重命名
-            applicationVariants.all { variant ->
-                variant.outputs.each { output ->
-                    def outputFile = output.outputFile
-                    if (outputFile != null && outputFile.name.endsWith('.apk')) {
-                        def fileName = "gank_v${defaultConfig.versionName}.apk"
-                        output.outputFile = new File(outputFile.parent, fileName)
-                    }
-                }
+    //对apk进行重命名
+    applicationVariants.all { variant ->
+        variant.outputs.each { output ->
+            def outputFile = output.outputFile
+            if (outputFile != null && outputFile.name.endsWith('.apk')) {
+                def fileName = "gank_${variant.buildType.name}.apk"
+                output.outputFile = new File(outputFile.parent, fileName)
             }
         }
     }
+
 }
 
 dependencies {

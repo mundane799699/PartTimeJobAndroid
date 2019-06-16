@@ -1,23 +1,25 @@
 package com.dasu.ganhuo.ui.meizi;
 
+import android.app.Activity;
 import android.content.Context;
+import android.content.DialogInterface;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
-import android.support.v7.widget.StaggeredGridLayoutManager;
+import android.support.v7.app.AlertDialog;
+import android.support.v7.app.AlertDialog.Builder;
 import android.view.LayoutInflater;
 import android.view.View;
+import android.view.View.OnClickListener;
 import android.view.ViewGroup;
 import com.dasu.ganhuo.R;
-import com.dasu.ganhuo.mode.logic.base.GankSp;
-import com.dasu.ganhuo.mode.logic.category.GanHuoEntity;
-import com.dasu.ganhuo.mode.logic.meizi.MeiziController;
-import com.dasu.ganhuo.ui.base.OnItemClickListener;
-import com.dasu.ganhuo.ui.view.recyclerview.LoadMoreRecyclerView;
-import com.dasu.ganhuo.ui.view.recyclerview.OnPullUpRefreshListener;
-import com.dasu.ganhuo.utils.ToastUtils;
-import java.util.ArrayList;
-import java.util.List;
+import com.dasu.ganhuo.ui.category.CategoryActivity;
+import com.dasu.ganhuo.ui.history.HistoryActivity;
+import com.dasu.ganhuo.ui.login.LoginActivity;
+import com.dasu.ganhuo.ui.reading.ReadingActivity;
+import com.dasu.ganhuo.ui.video.VideoActivity;
+import com.dasu.ganhuo.utils.AppPreference;
 
 /**
  * MeiziFragment
@@ -25,13 +27,20 @@ import java.util.List;
  * @author fangyuan
  * @date 2019/6/15
  */
-public class MeiziFragment extends Fragment implements OnItemClickListener<GanHuoEntity> {
+public class MeiziFragment extends Fragment {
     private Context mContext;
+    private Activity mActivity;
     
     @Override
     public void onAttach(Context context) {
         super.onAttach(context);
         mContext = context;
+    }
+    
+    @Override
+    public void onAttach(Activity activity) {
+        super.onAttach(activity);
+        mActivity = activity;
     }
     
     @Override
@@ -50,60 +59,69 @@ public class MeiziFragment extends Fragment implements OnItemClickListener<GanHu
     public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
         initView(view);
-        mMeiziController = new MeiziController(this);
-
-        mMeiziController.loadBaseData();
     }
     
-    private List<GanHuoEntity> mMeiziList = new ArrayList<>();
-    private MeiziController mMeiziController;
-    
-    private LoadMoreRecyclerView mMeiziRv;
-    private MeiziRecycleAdapter mRecycleAdapter;
     
     private void initView(View view) {
-        mMeiziRv = (LoadMoreRecyclerView) view.findViewById(R.id.rv_meizi_content);
-        StaggeredGridLayoutManager layoutManager =
-                new StaggeredGridLayoutManager(2, StaggeredGridLayoutManager.VERTICAL);
-        mMeiziRv.setLayoutManager(layoutManager);
-        mRecycleAdapter = new MeiziRecycleAdapter(mMeiziList);
-        mRecycleAdapter.setOnItemClickListener(this);
-        mMeiziRv.setAdapter(mRecycleAdapter);
-        mMeiziRv.setOnPullUpRefreshListener(onPullUpRefresh());
-    }
-    
-    private OnPullUpRefreshListener onPullUpRefresh() {
-        return new OnPullUpRefreshListener() {
+        view.findViewById(R.id.fl_meizi).setOnClickListener(new OnClickListener() {
             @Override
-            public void onPullUpRefresh() {
-                int counts = GankSp.getGankDateCounts(mContext);
-                if (mMeiziList.size() >= counts) {
-                    ToastUtils.show(mContext, "到底啦！没有妹子了...");
-                } else {
-                    mMeiziController.startPullUpRefresh();
-                }
+            public void onClick(View v) {
+                startActivity(new Intent(mContext, MeiziActivity.class));
             }
-        };
+        });
+        view.findViewById(R.id.fl_history).setOnClickListener(new OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(mContext, HistoryActivity.class));
+            }
+        });
+        view.findViewById(R.id.fl_read).setOnClickListener(new OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(mContext, ReadingActivity.class));
+            }
+        });
+        view.findViewById(R.id.fl_category).setOnClickListener(new OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(mContext, CategoryActivity.class));
+            }
+        });
+        view.findViewById(R.id.fl_video).setOnClickListener(new OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(mContext, VideoActivity.class));
+            }
+        });
+        view.findViewById(R.id.fl_logout).setOnClickListener(new OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                confirmQuit();
+            }
+        });
+        
     }
     
-    public void updateMeizi(List<GanHuoEntity> data) {
-        mMeiziList.clear();
-        mMeiziList.addAll(data);
-        mRecycleAdapter.notifyDataSetChanged();
+    private void confirmQuit() {
+        Builder builder = new Builder(mActivity);
+        builder.setMessage("确定要退出登录吗?").setPositiveButton("确定", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                logout();
+            }
+        }).setNegativeButton("取消", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                dialog.dismiss();
+            }
+        });
+        AlertDialog dialog = builder.create();
+        dialog.show();
     }
     
-    public void refreshMeizi(List<GanHuoEntity> data) {
-        int oldSize = mMeiziList.size();
-        mMeiziList.addAll(data);
-        mRecycleAdapter.notifyItemRangeInserted(oldSize, data.size());
-    }
-    
-    @Override
-    public void onItemClick(View view, GanHuoEntity data, int position) {
-        ArrayList<String> images = new ArrayList<>();
-        for (GanHuoEntity entity : mMeiziList) {
-            images.add(entity.getUrl());
-        }
-        ImageActivity.startActivity(this, position, images);
+    private void logout() {
+        AppPreference.clearUserInfo();
+        startActivity(new Intent(mContext, LoginActivity.class));
+        mActivity.finish();
     }
 }

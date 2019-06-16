@@ -1,15 +1,11 @@
 package com.dasu.ganhuo.mode.logic.meizi;
 
 import android.content.Context;
-
-import android.support.v4.app.Fragment;
 import com.dasu.ganhuo.mode.logic.category.GanHuoEntity;
 import com.dasu.ganhuo.mode.okhttp.GankController;
 import com.dasu.ganhuo.mode.okhttp.RetrofitListener;
 import com.dasu.ganhuo.ui.meizi.MeiziActivity;
-import com.dasu.ganhuo.ui.meizi.MeiziFragment;
 import com.dasu.ganhuo.utils.LogUtils;
-
 import java.util.List;
 
 /**
@@ -21,7 +17,6 @@ public class MeiziController {
     
     private Context mContext;
     private MeiziActivity mMeiziActivity;
-    private MeiziFragment mMeiziFragment;
     
     public MeiziController(Context context) {
         if (!(context instanceof MeiziActivity)) {
@@ -32,9 +27,6 @@ public class MeiziController {
         mMeiziActivity = (MeiziActivity) context;
     }
     
-    public MeiziController(Fragment fragment) {
-        mMeiziFragment = (MeiziFragment) fragment;
-    }
     
     private final String MEIZI_TYPE = GankController.TYPE_MEIZI;
     
@@ -45,8 +37,6 @@ public class MeiziController {
             public void onSuccess(List<GanHuoEntity> data) {
                 if (mMeiziActivity != null) {
                     mMeiziActivity.updateMeizi(data);
-                } else if (mMeiziFragment != null) {
-                    mMeiziFragment.updateMeizi(data);
                 }
             }
             
@@ -76,8 +66,6 @@ public class MeiziController {
                 if (data != null && data.size() > 0) {
                     if (mMeiziActivity != null) {
                         mMeiziActivity.refreshMeizi(data);
-                    } else if (mMeiziFragment != null) {
-                        mMeiziFragment.refreshMeizi(data);
                     }
                 } else {
                     //todo 加载失败，activity是否应该开个接口显示

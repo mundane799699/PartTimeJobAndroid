@@ -27,5 +27,7 @@
     <color name="bg">#0000aa</color>
     <color name="action_bar_bg">#1db9f2</color>
     <color name="window_bg">#ecedf1</color>
+    <color name="gray_efefef">#efefef</color>
+
 
 </resources>

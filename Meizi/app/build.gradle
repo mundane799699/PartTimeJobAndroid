@@ -91,4 +91,6 @@ dependencies {
     compile 'org.jsoup:jsoup:1.10.2'
     //photoview，用于图片查看
     compile 'com.github.chrisbanes:PhotoView:2.0.0'
+    compile 'com.android.support.constraint:constraint-layout:1.0.0-alpha9'
+
 }

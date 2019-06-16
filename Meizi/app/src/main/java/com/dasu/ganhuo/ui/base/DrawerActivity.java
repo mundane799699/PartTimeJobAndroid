@@ -18,6 +18,7 @@ import android.view.LayoutInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
 import com.dasu.ganhuo.R;
 import com.dasu.ganhuo.ui.category.CategoryActivity;
 import com.dasu.ganhuo.ui.history.HistoryActivity;
@@ -56,6 +57,8 @@ public abstract class DrawerActivity extends BaseActivity implements NavigationV
         
         mDrawerLayout = (DrawerLayout) findViewById(R.id.drawer_layout);
         mNavigationView = (NavigationView) findViewById(R.id.nav_view);
+        TextView tvCurrentUser = (TextView) mNavigationView.getHeaderView(0).findViewById(R.id.tv_current_user);
+        tvCurrentUser.setText(AppPreference.getUsername());
         mNavigationView.setNavigationItemSelectedListener(this);
     }
     

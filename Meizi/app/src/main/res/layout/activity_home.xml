@@ -16,7 +16,6 @@
         app:elevation="0dp">
 
         <android.support.v7.widget.Toolbar
-            app:title="妹子"
             android:id="@+id/toolbar"
             android:layout_width="match_parent"
             android:layout_height="?attr/actionBarSize"

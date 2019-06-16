@@ -42,7 +42,7 @@ public class MeiziActivity extends SubpageWithToolbarActivity implements OnItemC
 
     //所有涉及到recycleview的适配器数据源的，统一将数据源设置在activity里
     //adapter里只是持有activity数据源的引用，以确保数据源发生变化时adapter可以监听到
-    private List<GanHuoEntity> mMeiziList;
+    private List<GanHuoEntity> mMeiziList = new ArrayList<>();
     private MeiziController mMeiziController;
 
     private void initVariable() {
@@ -79,23 +79,15 @@ public class MeiziActivity extends SubpageWithToolbarActivity implements OnItemC
     }
 
     public void updateMeizi(List<GanHuoEntity> data) {
-        if (mMeiziList == null) {
-            mMeiziList = new ArrayList<>();
-        }
         mMeiziList.clear();
         mMeiziList.addAll(data);
         mRecycleAdapter.notifyDataSetChanged();
-        ToastUtils.show(mContext, "加载成功，新增" + data.size() + "张妹子啦");
     }
 
     public void refreshMeizi(List<GanHuoEntity> data) {
-        if (mMeiziList == null) {
-            mMeiziList = new ArrayList<>();
-        }
         int oldSize = mMeiziList.size();
         mMeiziList.addAll(data);
         mRecycleAdapter.notifyItemRangeInserted(oldSize, data.size());
-        ToastUtils.show(mContext, "加载成功，新增" + data.size() + "张妹子拉");
     }
 
 

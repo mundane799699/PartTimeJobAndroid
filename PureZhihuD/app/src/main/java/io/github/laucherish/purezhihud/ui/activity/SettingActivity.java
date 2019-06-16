@@ -25,6 +25,7 @@ public class SettingActivity extends BaseActivity {
     @Bind(R.id.toolbar)
     Toolbar mToolbar;
     private TextView mTvCurrentUser;
+    public static final String ACTION_LOGOUT = "logout";
     
     @Override
     protected int getLayoutId() {
@@ -71,6 +72,9 @@ public class SettingActivity extends BaseActivity {
     
     private void logout() {
         AppPreference.clearUserInfo();
+        Intent intent = new Intent();
+        intent.setAction(ACTION_LOGOUT);
+        sendBroadcast(intent);
         startActivity(new Intent(this, LoginActivity.class));
         finish();
     }

@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.myapp"
+    android:versionCode="1"
+    android:versionName="1.0" >
+    <uses-permission android:name="android.permission.GET_ACCOUNTS"/>
+    <uses-permission android:name="android.permission.USE_CREDENTIALS"/>
+    <uses-permission android:name="android.permission.MANAGE_ACCOUNTS"/>
+    <uses-permission android:name="android.permission.AUTHENTICATE_ACCOUNTS"/>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="com.android.launcher.permission.READ_STTINGS"/>
+    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE"/>
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE"/>
+    <uses-permission android:name="android.permission.READ_PHONE_STATE"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.BROADCAST_STICKY"/>
+
+    <uses-permission android:name="android.permission.READ_PHONE_STATE"/>
+
+
+    <application
+        android:name="com.example.ShouZhangApplication"
+        android:allowBackup="true"
+        android:icon="@drawable/ic_launcher"
+        android:label="@string/app_name"
+        android:theme="@style/AppTheme" >
+        <meta-data
+            android:name="com.baidu.lbsapi.API_KEY"
+            android:value="vFXgwsdMRG1WAbfhMAIwavkh5Lw8034I"
+            />
+        <activity android:name="com.example.splash.SplashActivity"
+            android:theme="@style/SplashTheme">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".login.LoginActivity"
+            android:label="@string/app_name" >
+
+        </activity>
+        <activity
+            android:name=".register.RegisterActivity"
+            android:label="@string/app_name" >
+        </activity>
+        <activity
+            android:name=".main.MainActivity"
+            android:label="@string/app_name" >
+
+        </activity>
+        <activity
+            android:name=".AddNoteActivity"
+            android:label="@string/app_name" >
+        </activity>
+        <activity
+            android:name=".NoteListActivity"
+            android:label="@string/app_name" >
+        </activity>
+        <activity
+            android:name=".NoteDetailActivity"
+            android:label="@string/app_name" >
+        </activity>
+        <activity
+            android:name=".Map"
+            android:label="@string/app_name" >
+        </activity>
+        <activity
+            android:name=".MusicActivity"
+            android:label="@string/app_name" >
+        </activity>
+        <service android:name="com.example.service.MyService"></service>
+
+
+
+
+
+    </application>
+
+</manifest>

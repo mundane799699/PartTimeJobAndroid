@@ -16,7 +16,6 @@ import android.widget.GridView;
 import android.widget.ImageView;
 import android.widget.TextView;
 import com.example.base.BaseActivity;
-import com.example.myapp.MusicActivity;
 import com.example.myapp.AddNoteActivity;
 import com.example.myapp.Map;
 import com.example.myapp.NoteListActivity;
@@ -33,8 +32,8 @@ public class MainActivity extends BaseActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         GridView gvInfo;
-        String[] titles = new String[] { "添加手账", "手账管理", "音乐", "地图", "退出登录" };
-        int[] images = new int[] { R.drawable.flag, R.drawable.flagm, R.drawable.music, R.drawable.map, R.drawable.quit };
+        String[] titles = new String[] { "添加手账", "手账管理",  "地图", "退出登录" };
+        int[] images = new int[] { R.drawable.flag, R.drawable.flagm, R.drawable.map, R.drawable.quit };
         gvInfo = findViewById(R.id.gv_info);
         
         PictureAdapter adapter = new PictureAdapter(titles, images, this);
@@ -53,14 +52,10 @@ public class MainActivity extends BaseActivity {
                         startActivity(intent);
                         break;
                     case 2:
-                        intent = new Intent(MainActivity.this, MusicActivity.class);
-                        startActivity(intent);
-                        break;
-                    case 3:
                         intent = new Intent(MainActivity.this, Map.class);
                         startActivity(intent);
                         break;
-                    case 4:
+                    case 3:
                         confirmQuit();
                         break;
                 }

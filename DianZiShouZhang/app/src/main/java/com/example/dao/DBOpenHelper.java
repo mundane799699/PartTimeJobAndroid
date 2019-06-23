@@ -13,8 +13,10 @@ public class DBOpenHelper extends SQLiteOpenHelper {
 	@Override
 	public void onCreate(SQLiteDatabase db) {
 		
-		db.execSQL("create table tb_user (user varchar(20),password varchar(20))");
-		db.execSQL("create table tb_flag (_id integer primary key,"+"flag varchar(200))");
+		String userSql = "create table tb_user (user varchar(20),password varchar(20))";
+		db.execSQL(userSql);
+		String flagSql = "create table tb_flag (_id integer primary key, flag text, song_name text, song_singer text, song_path text)";
+		db.execSQL(flagSql);
 	}
 	@Override
 	public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {

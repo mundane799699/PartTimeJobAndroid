@@ -1,12 +1,12 @@
 package com.example.dao;
 
-import java.util.ArrayList;
-import java.util.List;
-
-import com.example.model.Note;
+import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
+import com.example.model.Note;
+import java.util.ArrayList;
+import java.util.List;
 
 public class NoteDAO {
     private DBOpenHelper helper;
@@ -28,21 +28,43 @@ public class NoteDAO {
     }
     
     //增
-    public void add(Note tb_flag) {
-        db.execSQL("insert into tb_flag (_id,flag)values" + "(?,?)", new Object[] { tb_flag._id, tb_flag.flag });
+    public void add(Note note) {
+        try {
+            db.beginTransaction(); // 以事物的方式插入数据库，这样数据库只需要打开关闭一次
+            ContentValues values = new ContentValues();
+            values.put("flag", note.flag);
+            values.put("song_name", note.songName);
+            values.put("song_singer", note.songSinger);
+            values.put("song_path", note.songPath);
+            db.insert("tb_flag", null, values);
+            db.setTransactionSuccessful(); // 事物成功， 一次写入数据库， 这一句真正到数据库里
+        } catch (Exception e) {
+            e.printStackTrace();
+        } finally {
+            try {
+                db.endTransaction();
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        }
     }
     
     // 显示所有的信息
-    public List<Note> getScrollData(int start, int count) {
-        List<Note> tb_flag = new ArrayList<>();
-        Cursor cursor = db.rawQuery("select * from tb_flag limit ?,?", new String[] { String.valueOf(start), String.valueOf(count) });
+    public List<Note> getScrollData() {
+        List<Note> noteList = new ArrayList<>();
+        String sql = "select * from tb_flag";
+        Cursor cursor = db.rawQuery(sql, null);
         while (cursor.moveToNext()) {
-            tb_flag.add(new Note(cursor.getInt(cursor.getColumnIndex("_id")),
-                    
-                    cursor.getString(cursor.getColumnIndex("flag"))));
+            Note note = new Note();
+            note._id = cursor.getInt(cursor.getColumnIndex("_id"));
+            note.flag = cursor.getString(cursor.getColumnIndex("flag"));
+            note.songName = cursor.getString(cursor.getColumnIndex("song_name"));
+            note.songSinger = cursor.getString(cursor.getColumnIndex("song_singer"));
+            note.songPath = cursor.getString(cursor.getColumnIndex("song_path"));
+            noteList.add(note);
         }
         cursor.close();
-        return tb_flag;
+        return noteList;
     }
     
     // 获取总记录数
@@ -56,11 +78,14 @@ public class NoteDAO {
     }
     
     public Note find(int id) {
-        Cursor cursor = db.rawQuery("select _id,flag from tb_flag where _id=?", new String[] { String.valueOf(id) });
+        Cursor cursor = db.rawQuery("select _id,flag,song_name,song_singer,song_path from tb_flag where _id=?", new String[] { String.valueOf(id) });
         if (cursor.moveToNext()) {
-            return new Note(cursor.getInt(cursor.getColumnIndex("_id")),
-                    
-                    cursor.getString(cursor.getColumnIndex("flag")));
+            int noteId = cursor.getInt(cursor.getColumnIndex("_id"));
+            String noteFlag = cursor.getString(cursor.getColumnIndex("flag"));
+            String songName = cursor.getString(cursor.getColumnIndex("song_name"));
+            String songSinger = cursor.getString(cursor.getColumnIndex("song_singer"));
+            String songPath = cursor.getString(cursor.getColumnIndex("song_path"));
+            return new Note(noteId, noteFlag, songName, songSinger, songPath);
         }
         cursor.close();
         return null;

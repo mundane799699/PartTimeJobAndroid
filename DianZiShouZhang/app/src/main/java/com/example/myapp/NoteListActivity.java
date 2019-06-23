@@ -33,7 +33,7 @@ public class NoteListActivity extends BaseActivity {
             }
         });
         mTvTitle = findViewById(R.id.tv_title);
-        mTvTitle.setText("备忘录管理");
+        mTvTitle.setText("手账管理");
         mLvNotes = findViewById(R.id.lv_note);
         mLvNotes.setOnItemClickListener(new OnItemClickListener() {
             @Override
@@ -57,7 +57,7 @@ public class NoteListActivity extends BaseActivity {
     
     private void queryAllNotes() {
         NoteDAO noteDAO = new NoteDAO(NoteListActivity.this);
-        List<Note> noteList = noteDAO.getScrollData(0, (int) noteDAO.getCount());
+        List<Note> noteList = noteDAO.getScrollData();
         if (noteList != null) {
             mNoteList.clear();
             mNoteList.addAll(noteList);

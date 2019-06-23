@@ -1,0 +1,40 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="10dp"
+    xmlns:tools="http://schemas.android.com/tools"
+    >
+
+    <TextView
+        tools:text="1"
+        android:id="@+id/t_postion"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="5dp"
+        />
+
+    <TextView
+        tools:text="dfsdhfdfh"
+        android:id="@+id/t_song"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="5dp"
+        />
+
+    <TextView
+        tools:text="dfdfdfdf"
+        android:id="@+id/t_singer"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="5dp"
+        />
+
+    <TextView
+        tools:text="dfdfdfdf"
+        android:id="@+id/t_duration"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        />
+
+
+</LinearLayout>

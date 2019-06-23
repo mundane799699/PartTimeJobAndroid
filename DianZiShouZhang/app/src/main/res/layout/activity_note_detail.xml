@@ -8,6 +8,23 @@
 
     <include layout="@layout/rl_header"/>
 
+    <TextView
+        android:textColor="@color/cherokee"
+        android:padding="10dp"
+        android:id="@+id/tv_song"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        />
+
+    <View
+        android:visibility="gone"
+        android:id="@+id/view_divider"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#e0e0e0"
+        />
+
     <EditText
         android:id="@+id/et_content"
         android:layout_width="match_parent"
@@ -17,7 +34,7 @@
         android:focusable="true"
         android:focusableInTouchMode="true"
         android:gravity="top"
-        android:hint="请输入备忘录内容，最多输入200字"
+        android:hint="请输入手账内容"
         android:lines="10"
         >
     </EditText>

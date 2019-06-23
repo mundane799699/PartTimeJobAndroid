@@ -33,7 +33,7 @@ public class MainActivity extends BaseActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         GridView gvInfo;
-        String[] titles = new String[] { "添加备忘录", "备忘录管理", "音乐", "地图", "退出登录" };
+        String[] titles = new String[] { "添加手账", "手账管理", "音乐", "地图", "退出登录" };
         int[] images = new int[] { R.drawable.flag, R.drawable.flagm, R.drawable.music, R.drawable.map, R.drawable.quit };
         gvInfo = findViewById(R.id.gv_info);
         

@@ -57,6 +57,7 @@ public class AddNoteActivity extends BaseActivity {
     private TextView mTvSong;
     private View mDivider;
     private Song mCurrentSong;
+    private View mIvShare;
     
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -77,6 +78,14 @@ public class AddNoteActivity extends BaseActivity {
         mIvInsertImage = findViewById(R.id.iv_insert_pic);
         mTvInsertMusic = findViewById(R.id.tv_insert_music);
         mDivider = findViewById(R.id.view_divider);
+        mIvShare = findViewById(R.id.iv_share);
+        mIvShare.setOnClickListener(new OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                share();
+        
+            }
+        });
         
         mMediaPlayer = new MediaPlayer();
         
@@ -123,6 +132,18 @@ public class AddNoteActivity extends BaseActivity {
                 insertMusic();
             }
         });
+    }
+    
+    private void share() {
+        String content = mEtNote.getText().toString();
+        if (TextUtils.isEmpty(content)) {
+            return;
+        }
+        Intent intent = new Intent(Intent.ACTION_SEND);
+        intent.setType("text/plain");
+        intent.putExtra(Intent.EXTRA_SUBJECT, "分享");
+        intent.putExtra(Intent.EXTRA_TEXT, content);
+        startActivity(Intent.createChooser(intent, "分享"));
     }
     
     private void insertMusic() {

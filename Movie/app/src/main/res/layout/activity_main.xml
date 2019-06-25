@@ -1,0 +1,50 @@
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp"
+    >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:orientation="vertical"
+        >
+
+        <Button
+            android:id="@+id/btn_action"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="动作片"
+            />
+
+        <Button
+            android:id="@+id/btn_love"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="爱情片"
+            />
+
+        <Button
+            android:id="@+id/btn_socket"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="聊天室"
+            />
+
+
+        <Button
+            android:id="@+id/btn_bianjian"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="查看所有便笺"
+            />
+
+
+    </LinearLayout>
+
+
+</LinearLayout>

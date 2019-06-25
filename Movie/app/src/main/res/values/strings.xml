@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">电影</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="title_activity_register">注册</string>
+    <string name="title_activity_strategy">主页</string>
+    <string name="title_activity_scenic">ScenicActivity</string>
+    <string name="action_settings">Settings</string>
+    <string name="title_activity_content">ContentActivity</string>
+    <string name="title_activity_delicious">DeliciousActivity</string>
+    <string name="title_activity_architecture">ArchitectureActivity</string>
+    <string name="unregister">该用户还未注册"</string>
+    <string name="passworderror">密码错误!</string>
+    <string name="usernamenotempty">用户名不能为空</string>
+    <string name="passwordnotempty">密码不能为空</string>
+    <string name="passwordnotsame">两次输入的密码不一致</string>
+    <string name="registersuccess">注册成功</string>
+    <string name="registerfail">注册失败</string>
+    <string name="hasregistered">该用户名已被注册过</string>
+    <string name="parameter_empty">字段不能为空</string>
+    <string name="taitannike">泰坦尼克号</string>
+    <string name="taitannikedescribe">《泰坦尼克号》是美国二十世纪福斯电影公司、派拉蒙影业公司出品爱情片，由詹姆斯·卡梅隆执导，莱昂纳多·迪卡普里奥、凯特·温斯莱特领衔主演。 影片以1912年泰坦尼克号邮轮在其处女启航时触礁冰山而沉没的事件为背景，讲述了处于不同阶层的两个人穷画家杰克和贵族女露丝抛弃世俗的偏见坠入爱河，最终杰克把生命的机会让给了露丝的感人故事</string>
+    <string name="luomajiari">罗马假日</string>
+    <string name="luomajiaridescribe">1953年的电影《罗马假日》，是奥黛丽·赫本的成名之作，也是无数影迷心中最为经典的记忆。这是一个浪漫又带有遗憾的故事，美丽高贵的公主短暂逃离宫廷繁文缛节的束缚，和英俊潇洒的平民记者在罗马度过了快乐的一天，萌生爱意，然而碍于身份的差距，他们最终还是只能依依不舍地告别，道一声再见，回归自己原来的生活..</string>
+    <string name="gongfu">功夫</string>
+    <string name="gonfude">20世纪40年代的中国广东，有一名无可药救的小混混阿星（周星驰饰），此人能言善道、擅耍嘴皮，但意志不坚，一事无成。他一心渴望加入手段冷酷无情、恶名昭彰的斧头帮，并梦想成为黑道响叮当的人物。此时斧头帮正倾全帮之力急欲铲平唯一未收入势力范围的地头，未料该地卧虎藏龙，痴肥的恶霸女房东肥婆加上与其成对比的懦弱丈夫二叔公，率领一班深藏不漏的武林高手，大展奇功异能，对抗恶势力</string>
+    <string name="daohuoxian">导火线</string>
+    <string name="daohuoxiande">《导火线》是由叶伟信执导，甄子丹、古天乐、吕良伟、范冰冰、邹兆龙等人联袂主演的动作警匪片。影片讲述了香港重案组督查马军、卧底华生与黑帮的白热化对抗故事。影片于2007年8月3日首映，首周票房2000多万</string>
+    <string name="connectsuccess">连接成功</string>
+    <string name="serverstop">服务端已停止服务</string>
+    <string name="connectfail">连接未完成或连接失败，无法发送消息！</string>
+    <string name="you">你:</string>
+    <string name="sendfail">发送失败：服务端已关闭服务！</string>
+    <string name="connected_fail">连接失败</string>
+
+</resources>

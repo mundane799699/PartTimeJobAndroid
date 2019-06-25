@@ -59,7 +59,7 @@ public class SocketActivity extends BaseActivity {
                     runOnUiThread(new Runnable() {
                         @Override
                         public void run() {
-                            showMessage("���ӳɹ�");
+                            showMessage("连接成功");
                             mEtIP.setEnabled(false);
                             mBtnSend.setOnClickListener(new View.OnClickListener() {
                                 @Override
@@ -76,7 +76,7 @@ public class SocketActivity extends BaseActivity {
                     runOnUiThread(new Runnable() {
                         @Override
                         public void run() {
-                            showMessage("����ʧ��");
+                            showMessage("连接失败");
                         }
                     });
                     e.printStackTrace();
@@ -101,7 +101,7 @@ public class SocketActivity extends BaseActivity {
                         @Override
                         public void run() {
                             String text = mTvReceived.getText().toString();
-                            mTvReceived.setText(text + "\n�������ֹͣ����");
+                            mTvReceived.setText(text + "\n服务端已停止服务");
                         }
                     });
                 }
@@ -114,26 +114,26 @@ public class SocketActivity extends BaseActivity {
             @Override
             public void run() {
                 
-                // ���mSocketΪnull�п������������
-                // 1.���ڳ������ӷ����
-                // 2.����ʧ��
+                // 如果mSocket为null有可能两种情况：
+                // 1.还在尝试连接服务端
+                // 2.连接失败
                 if (mSocket == null) {
                     runOnUiThread(new Runnable() {
                         @Override
                         public void run() {
-                            showMessage("����δ��ɻ�����ʧ�ܣ��޷�������Ϣ��");
+                            showMessage("连接未完成或连接失败，无法发送消息！");
                         }
                     });
                     return;
                 }
                 try {
-                    //������ǰ��ж�ȡ��Ϣ������ÿ����Ϣ������ӻ��з� \n
+                    //服务端是按行读取消息，所以每条消息最后必须加换行符 \n
                     mWriter.write(msg + "\n");
                     runOnUiThread(new Runnable() {
                         @Override
                         public void run() {
                             String text = mTvReceived.getText().toString();
-                            mTvReceived.setText(text + "\n��:" + msg + "\n");
+                            mTvReceived.setText(text + "\n你:" + msg + "\n");
                             mEtContent.setText(null);
                         }
                     });
@@ -142,7 +142,7 @@ public class SocketActivity extends BaseActivity {
                     runOnUiThread(new Runnable() {
                         @Override
                         public void run() {
-                            showMessage("����ʧ�ܣ�������ѹرշ���");
+                            showMessage("发送失败：服务端已关闭服务！");
                         }
                     });
                     e.printStackTrace();

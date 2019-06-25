@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <string name="app_name">动漫</string>
+    <string name="app_name">运动</string>
     <string name="hello_world">Hello world!</string>
     <string name="title_activity_register">注册</string>
     <string name="title_activity_strategy">主页</string>
@@ -27,5 +27,11 @@
     <string name="fwc">俯卧撑</string>
     <string name="fwcd">俯卧撑（英文：push-up；Press-up。中国大陆称作俯卧撑，中国台湾地区称作伏地挺身，港澳地区称作掌上压），常见的健身运动有助于增加胸大肌锻炼效果 [1]  。 在日常锻炼和体育课上，特别是在军事体能训练中是一项基本训练。俯卧撑主要锻炼上肢、腰部及腹部的肌肉，尤其是胸肌。是很简单易行却十分有效的力量训练手段。初学者练习俯卧撑可以进行两组，每组15到20下；有一定基础的运动者则可做3组，每组20下；高水平人士可以尝试4组30到50下的俯卧撑锻炼。</string>
 
+    <string name="connectsuccess">连接成功</string>
+    <string name="serverstop">服务端已停止服务</string>
+    <string name="connectfail">连接未完成或连接失败，无法发送消息！</string>
+    <string name="you">你:</string>
+    <string name="sendfail">发送失败：服务端已关闭服务！</string>
+    <string name="connected_fail">连接失败</string>
 
 </resources>

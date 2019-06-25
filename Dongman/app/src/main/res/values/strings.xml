@@ -17,11 +17,22 @@
     <string name="passwordnotsame">两次输入的密码不一致</string>
     <string name="registersuccess">注册成功</string>
     <string name="registerfail">注册失败</string>
+    <string name="hasregistered">该用户名已被注册过</string>
+    <string name="parameter_empty">字段不能为空</string>
     <string name="connectsuccess">连接成功</string>
     <string name="serverstop">服务端已停止服务</string>
     <string name="connectfail">连接未完成或连接失败，无法发送消息！</string>
     <string name="you">你:</string>
     <string name="sendfail">发送失败：服务端已关闭服务！</string>
     <string name="connected_fail">连接失败</string>
+    <string name="baise">白蛇缘起</string>
+    <string name="baisedesc">《白蛇：缘起》是由追光动画和华纳兄弟共同制作的动画电影，由黄家康、赵霁执导，张喆、杨天翔、唐小喜等配音，于2019年1月11日在中国内地上映。影片在中国民间传说“白蛇传”基础上有所创新，讲述白素贞在五百年前与许仙的前身阿宣之间一段刻骨铭心的爱情故事</string>
+    <string name="qinshi">秦时明月</string>
+    <string name="qinshidesc">《秦时明月》系列是由中国杭州玄机科技信息技术有限公司制作的3D武侠动画系列，于2007年春节期间起在中国全国各地正式首映，网络上亦有授权播出。另有衍生出的仅在网络、不在电视播出的姐妹篇《天行九歌》等。目前动画已完结前5部，共175集。第6部《秦时明月之沧海横流》已上映序章。</string>
+    <string name="yiquan">一拳超人</string>
+    <string name="yiquandesc">《一拳超人》讲述的是主人公埼玉原本是一名整日奔波于求职的普通人。三年前的一天偶然遇到了要对淘气少年下杀手的异变螃蟹人后，回忆起年少年时“想要成为英雄”的梦想，最终拼尽全力救下了淘气少年。重拾对于成为英雄的兴趣之后，通过拼命锻炼，埼玉终于脱胎换骨获得了最强的力量，但同时失去了头发成了光头，似乎还失去了某些感情。</string>
+    <string name="haizei">海贼王</string>
+    <string name="haizeidesc">时值“大海贼时代”，为了寻找传说中海贼王罗杰所留下的大秘宝“ONE PIECE”，无数海贼扬起旗帜，互相争斗。有一个梦想成为海贼王的少年叫路飞，他因误食“恶魔果实”而成为了橡皮人，在获得超人能力的同时付出了一辈子无法游泳的代价。十年后，路飞为实现与因救他而断臂的香克斯的约定而出海，他在旅途中不断寻找志同道合的伙伴，开始了以成为海贼王为目标的冒险旅程</string>
+
 
 </resources>

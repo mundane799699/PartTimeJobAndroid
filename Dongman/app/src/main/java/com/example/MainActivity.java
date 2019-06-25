@@ -18,6 +18,17 @@ public class MainActivity extends Activity implements OnClickListener {
         findViewById(R.id.btn_chinese).setOnClickListener(this);
         findViewById(R.id.btn_foreign).setOnClickListener(this);
         findViewById(R.id.btn_socket).setOnClickListener(this);
+        findViewById(R.id.btn_bianjian).setOnClickListener(new OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                goToBianjianListActivity();
+            
+            }
+        });
+    }
+    
+    private void goToBianjianListActivity() {
+        startActivity(new Intent(this, BianJianListActivity.class));
     }
     
     @Override

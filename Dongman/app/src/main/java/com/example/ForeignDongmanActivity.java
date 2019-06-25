@@ -10,8 +10,6 @@ import android.widget.ListView;
 import com.example.adapter.FoodAdapter;
 import com.example.bean.GuowaiDongman;
 import com.example.dao.LoveMovieDAO;
-import com.example.R;
-
 import java.util.ArrayList;
 import java.util.List;
 
@@ -49,16 +47,16 @@ public class ForeignDongmanActivity extends Activity implements OnItemClickListe
     private void initDaoData() {
         GuowaiDongman dongman1 = new GuowaiDongman();
         dongman1.drawableName = "yiquanchaoren";
-        dongman1.name = "һȭ����";
+        dongman1.name = getString(R.string.yiquan);
         dongman1.describe =
-                "��һȭ���ˡ������������˹�����ԭ����һ�����ձ�������ְ����ͨ�ˡ�����ǰ��һ��żȻ������Ҫ������������ɱ�ֵ�����з�˺󣬻�����������ʱ����Ҫ��ΪӢ�ۡ������룬����ƴ��ȫ���������������ꡣ��ʰ���ڳ�ΪӢ�۵���Ȥ֮��ͨ��ƴ������������������̥���ǻ������ǿ����������ͬʱʧȥ��ͷ�����˹�ͷ���ƺ���ʧȥ��ĳЩ���顣";
+                getString(R.string.yiquandesc);
         mDao.add(dongman1);
         
         GuowaiDongman dongman2 = new GuowaiDongman();
         dongman2.drawableName = "haizeiwang";
-        dongman2.name = "������";
+        dongman2.name = getString(R.string.haizei);
         dongman2.describe =
-                "ʱֵ������ʱ������Ϊ��Ѱ�Ҵ�˵�к������޽������µĴ��ر���ONE PIECE�������������������ģ�������������һ�������Ϊ�������������·�ɣ�������ʳ����ħ��ʵ������Ϊ����Ƥ�ˣ��ڻ�ó���������ͬʱ������һ�����޷���Ӿ�Ĵ��ۡ�ʮ���·��Ϊʵ������������ϱ۵����˹��Լ����������������;�в���Ѱ��־ͬ���ϵĻ�飬��ʼ���Գ�Ϊ������ΪĿ���ð���ó�";
+                getString(R.string.haizeidesc);
         mDao.add(dongman2);
     }
     

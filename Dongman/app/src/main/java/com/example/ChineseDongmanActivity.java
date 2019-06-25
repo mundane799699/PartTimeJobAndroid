@@ -47,18 +47,15 @@ public class ChineseDongmanActivity extends Activity implements OnItemClickListe
     private void initDaoData() {
         ChineseDongman dongman1 = new ChineseDongman();
         dongman1.drawableName = "baishe";
-        dongman1.name = "����Ե��";
-        dongman1.describe =
-                "���ߣ�Ե������׷�⶯���ͻ����ֵܹ�ͬ�����Ķ�����Ӱ���ɻƼҿ�������ִ�����ņ��������衢��Сϲ����������2019��1��11�����й��ڵ���ӳ��ӰƬ���й���䴫˵�����ߴ����������������£������������������ǰ�����ɵ�ǰ����֮��һ�ο̹����ĵİ������";
+        dongman1.name = getString(R.string.baise);
+        dongman1.describe = getString(R.string.baisedesc);
         mActionMovie.add(dongman1);
         
         ChineseDongman dongman2 = new ChineseDongman();
         dongman2.drawableName = "qinshimingyue";
-        dongman2.name = "��ʱ����";
-        dongman2.describe =
-                "����ʱ���¡�ϵ�������й����������Ƽ���Ϣ�������޹�˾������3D��������ϵ�У���2007�괺���ڼ������й�ȫ��������ʽ��ӳ��������������Ȩ�����������������Ľ������硢���ڵ��Ӳ����Ľ���ƪ�����оŸ衷�ȡ�Ŀǰ���������ǰ5������175������6������ʱ����֮�׺�����������ӳ���¡�";
+        dongman2.name = getString(R.string.qinshi);
+        dongman2.describe = getString(R.string.qinshidesc);
         mActionMovie.add(dongman2);
-
     }
     
     @Override

@@ -27,6 +27,9 @@ public class DBOpenHelper extends SQLiteOpenHelper {
     
         String arcSql = "create table tb_architecture (name text, describe text, drawableName text)";
         db.execSQL(arcSql);
+    
+        String bianjianSql = "create table tb_bianjian (title text, describe text, date text)";
+        db.execSQL(bianjianSql);
     }
     
     @Override

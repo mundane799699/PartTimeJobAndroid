@@ -32,6 +32,13 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content" />
 
+        <Button
+            android:id="@+id/btn_bianjian"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="查看所有便笺"
+            />
+
 
 
     </LinearLayout>

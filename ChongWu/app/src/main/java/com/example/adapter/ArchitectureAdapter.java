@@ -7,7 +7,7 @@ import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
-import com.example.xstrategy.R;
+import com.example.R;
 import com.example.Utils.MResource;
 import com.example.bean.Architecture;
 import java.util.List;

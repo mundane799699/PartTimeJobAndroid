@@ -1,7 +1,7 @@
 package com.example.adapter;
 
 import com.example.Bean;
-import com.example.xstrategy.R;
+import com.example.R;
 import java.util.List;
 
 import android.content.Context;

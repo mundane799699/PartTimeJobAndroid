@@ -7,7 +7,7 @@ import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.TextView;
 import com.example.bean.Song;
-import com.example.xstrategy.R;
+import com.example.R;
 import java.util.List;
 
 /**

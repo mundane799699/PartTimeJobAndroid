@@ -9,7 +9,7 @@ import android.widget.ListView;
 import com.example.adapter.SongAdapter;
 import com.example.bean.Song;
 import com.example.dao.SongDao;
-import com.example.xstrategy.R;
+import com.example.R;
 import java.util.ArrayList;
 import java.util.List;
 

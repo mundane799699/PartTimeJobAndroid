@@ -3,7 +3,7 @@ package com.example;
 import com.example.adapter.SceneAdapter;
 import com.example.bean.Dog;
 import com.example.dao.DaoDAO;
-import com.example.xstrategy.R;
+import com.example.R;
 
 import java.util.ArrayList;
 import java.util.List;

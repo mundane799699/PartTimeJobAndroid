@@ -7,7 +7,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import com.example.base.BaseActivity;
 import com.example.dao.UserDAO;
-import com.example.xstrategy.R;
+import com.example.R;
 
 public class RegisterActivity extends BaseActivity {
     

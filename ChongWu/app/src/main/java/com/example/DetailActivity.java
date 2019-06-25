@@ -6,7 +6,7 @@ import android.os.Bundle;
 import android.widget.ImageView;
 import android.widget.TextView;
 import com.example.Utils.MResource;
-import com.example.xstrategy.R;
+import com.example.R;
 
 public class DetailActivity extends Activity {
     

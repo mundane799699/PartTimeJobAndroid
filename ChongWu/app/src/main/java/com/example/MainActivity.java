@@ -6,7 +6,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.view.View.OnClickListener;
 import com.example.Utils.SPUtil;
-import com.example.xstrategy.R;
+import com.example.R;
 
 public class MainActivity extends Activity implements OnClickListener {
     

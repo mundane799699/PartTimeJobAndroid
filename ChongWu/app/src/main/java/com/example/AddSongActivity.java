@@ -8,7 +8,6 @@ import android.widget.EditText;
 import com.example.base.BaseActivity;
 import com.example.bean.Song;
 import com.example.dao.SongDao;
-import com.example.xstrategy.R;
 
 /**
  * AddSongActivity

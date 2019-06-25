@@ -1,6 +1,6 @@
 package com.example.adapter;
 
-import com.example.xstrategy.R;
+import com.example.R;
 import com.example.Utils.MResource;
 import com.example.bean.Dog;
 import java.util.List;

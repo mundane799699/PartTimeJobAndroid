@@ -7,7 +7,7 @@ import android.view.View.OnClickListener;
 import android.widget.EditText;
 import android.widget.TextView;
 import com.example.base.BaseActivity;
-import com.example.xstrategy.R;
+import com.example.R;
 
 import java.io.BufferedReader;
 import java.io.BufferedWriter;

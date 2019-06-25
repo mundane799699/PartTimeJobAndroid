@@ -10,7 +10,7 @@ import android.widget.ListView;
 import com.example.adapter.ArchitectureAdapter;
 import com.example.bean.Architecture;
 import com.example.dao.ArchitectureDAO;
-import com.example.xstrategy.R;
+import com.example.R;
 
 import java.util.ArrayList;
 import java.util.List;

@@ -7,7 +7,7 @@ import android.view.View.OnClickListener;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
-import com.example.xstrategy.R;
+import com.example.R;
 import com.example.MainActivity;
 import com.example.Utils.AppPreference;
 import com.example.Utils.CheckUtils;
@@ -50,11 +50,11 @@ public class LoginActivity extends BaseActivity {
                 List<User> allRegisterUsers = pwdDAO.queryAllUsers();
                 boolean ifHasThisUser = CheckUtils.checkHasThisUser(allRegisterUsers, username);
                 if (!ifHasThisUser) {
-                    showMessage("¸ÃÓÃ»§»¹Î´×¢²á");
+                    showMessage("ï¿½ï¿½ï¿½Ã»ï¿½ï¿½ï¿½Î´×¢ï¿½ï¿½");
                     return;
                 }
                 if (pwdDAO.find(username, password) == null) {
-                    Toast.makeText(LoginActivity.this, "ÃÜÂë´íÎó!", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(LoginActivity.this, "ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½!", Toast.LENGTH_SHORT).show();
                 } else {
                     AppPreference.saveUsername(username);
                     AppPreference.savePassword(password);

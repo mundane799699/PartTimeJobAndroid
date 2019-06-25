@@ -8,7 +8,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 import com.example.lvyou.R;
-import com.example.StrategyActivity;
+import com.example.MainActivity;
 import com.example.Utils.AppPreference;
 import com.example.Utils.CheckUtils;
 import com.example.Utils.SPUtil;
@@ -58,7 +58,7 @@ public class LoginActivity extends BaseActivity {
                 } else {
                     AppPreference.saveUsername(username);
                     AppPreference.savePassword(password);
-                    startActivity(new Intent(LoginActivity.this, StrategyActivity.class));
+                    startActivity(new Intent(LoginActivity.this, MainActivity.class));
                     finish();
                 }
             }
@@ -68,7 +68,7 @@ public class LoginActivity extends BaseActivity {
         String username = AppPreference.getUsername();
         UserDAO pwdDAO = new UserDAO(this);
         if (pwdDAO.find(username, password) != null) {
-            startActivity(new Intent(this, StrategyActivity.class));
+            startActivity(new Intent(this, MainActivity.class));
             finish();
         }
     }

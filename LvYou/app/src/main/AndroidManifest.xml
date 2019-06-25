@@ -42,7 +42,7 @@
             android:label="@string/title_activity_register">
         </activity>
         <activity
-            android:name="com.example.StrategyActivity"
+            android:name="com.example.MainActivity"
             android:label="@string/title_activity_strategy">
         </activity>
         <activity

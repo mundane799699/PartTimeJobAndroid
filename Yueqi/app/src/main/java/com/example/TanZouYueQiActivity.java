@@ -1,22 +1,20 @@
 package com.example;
 
-import com.example.adapter.SceneAdapter;
-import com.example.bean.TanZouYueQi;
-import com.example.dao.ActionMovieDAO;
-import com.example.xstrategy.R;
-
-import java.util.ArrayList;
-import java.util.List;
-
-import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemClickListener;
 import android.widget.ListView;
+import com.example.adapter.SceneAdapter;
+import com.example.base.BaseActivity;
+import com.example.bean.TanZouYueQi;
+import com.example.dao.ActionMovieDAO;
+import com.example.xstrategy.R;
+import java.util.ArrayList;
+import java.util.List;
 
-public class TanZouYueQiActivity extends Activity implements OnItemClickListener {
+public class TanZouYueQiActivity extends BaseActivity implements OnItemClickListener {
     
     private ListView lv_strategy;
     private List<TanZouYueQi> mDataList = new ArrayList<TanZouYueQi>();
@@ -27,7 +25,6 @@ public class TanZouYueQiActivity extends Activity implements OnItemClickListener
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_scenic);
-        
         lv_strategy = (ListView) findViewById(R.id.lv_strategy);
         mAdapter = new SceneAdapter(this, mDataList);
         lv_strategy.setAdapter(mAdapter);

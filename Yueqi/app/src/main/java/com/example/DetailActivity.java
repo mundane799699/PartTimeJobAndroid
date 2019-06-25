@@ -1,14 +1,14 @@
 package com.example;
 
-import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.widget.ImageView;
 import android.widget.TextView;
 import com.example.Utils.MResource;
+import com.example.base.BaseActivity;
 import com.example.xstrategy.R;
 
-public class DetailActivity extends Activity {
+public class DetailActivity extends BaseActivity {
     
     @Override
     protected void onCreate(Bundle savedInstanceState) {

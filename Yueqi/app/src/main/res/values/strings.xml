@@ -18,5 +18,6 @@
     <string name="registersuccess">注册成功</string>
     <string name="registerfail">注册失败</string>
     <string name="hasregistered">该用户名已被注册过</string>
+    <string name="parameter_empty">字段不能为空</string>
 
 </resources>

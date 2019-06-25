@@ -19,6 +19,8 @@ public class MainActivity extends Activity implements OnClickListener {
         findViewById(R.id.btn_tanzou).setOnClickListener(this);
         findViewById(R.id.btn_chuiguan).setOnClickListener(this);
         findViewById(R.id.btn_socket).setOnClickListener(this);
+        findViewById(R.id.btn_all_register_users).setOnClickListener(this);
+        findViewById(R.id.btn_contacts).setOnClickListener(this);
     }
     
     @Override
@@ -34,6 +36,12 @@ public class MainActivity extends Activity implements OnClickListener {
                 break;
             case R.id.btn_socket:
                 startActivity(new Intent(this, SocketActivity.class));
+                break;
+            case R.id.btn_all_register_users:
+                startActivity(new Intent(this, AllRegisterUsersActivity.class));
+                break;
+            case R.id.btn_contacts:
+                startActivity(new Intent(this, ContactListActivity.class));
                 break;
             default:
                 break;

@@ -1,6 +1,5 @@
 package com.example;
 
-import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -8,14 +7,14 @@ import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemClickListener;
 import android.widget.ListView;
 import com.example.adapter.FoodAdapter;
+import com.example.base.BaseActivity;
 import com.example.bean.ChuiGuanYueQi;
 import com.example.dao.LoveMovieDAO;
 import com.example.xstrategy.R;
-
 import java.util.ArrayList;
 import java.util.List;
 
-public class ChuiGuanYueQiActivity extends Activity implements OnItemClickListener {
+public class ChuiGuanYueQiActivity extends BaseActivity implements OnItemClickListener {
     
     private ListView lv_delicious;
     private FoodAdapter mAdapter;

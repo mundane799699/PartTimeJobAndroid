@@ -16,7 +16,7 @@ public class DBOpenHelper extends SQLiteOpenHelper {
     @Override
     public void onCreate(SQLiteDatabase db) {
         
-        String userSql = "create table tb_user (user varchar(20),password varchar(20))";
+        String userSql = "create table tb_user (user text, password text)";
         db.execSQL(userSql);
         
         String secneSql = "create table tb_scene (name text, describe text, drawableName text)";
@@ -27,6 +27,11 @@ public class DBOpenHelper extends SQLiteOpenHelper {
     
         String arcSql = "create table tb_architecture (name text, describe text, drawableName text)";
         db.execSQL(arcSql);
+    
+        String contactSql = "create table tb_contact (name text, phone text, relation text)";
+        db.execSQL(contactSql);
+        
+        
     }
     
     @Override

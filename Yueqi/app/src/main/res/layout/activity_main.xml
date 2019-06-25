@@ -32,6 +32,18 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content" />
 
+        <Button
+            android:id="@+id/btn_all_register_users"
+            android:text="查看所有的注册用户"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <Button
+            android:id="@+id/btn_contacts"
+            android:text="添加通讯录"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
 
 
     </LinearLayout>

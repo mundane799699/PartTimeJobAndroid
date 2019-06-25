@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">乐器</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="title_activity_register">注册</string>
+    <string name="title_activity_strategy">主页</string>
+    <string name="title_activity_scenic">ScenicActivity</string>
+    <string name="action_settings">Settings</string>
+    <string name="title_activity_content">ContentActivity</string>
+    <string name="title_activity_delicious">DeliciousActivity</string>
+    <string name="title_activity_architecture">ArchitectureActivity</string>
+    <string name="unregister">该用户还未注册"</string>
+    <string name="passworderror">密码错误!</string>
+    <string name="usernamenotempty">用户名不能为空</string>
+    <string name="passwordnotempty">密码不能为空</string>
+    <string name="passwordnotsame">两次输入的密码不一致</string>
+    <string name="registersuccess">注册成功</string>
+    <string name="registerfail">注册失败</string>
+    <string name="hasregistered">该用户名已被注册过</string>
+
+</resources>

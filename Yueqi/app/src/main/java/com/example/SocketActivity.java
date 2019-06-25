@@ -23,6 +23,7 @@ public class SocketActivity extends BaseActivity {
     private TextView mTvReceived;
     private EditText mEtContent;
     private View mBtnSend;
+    private EditText mEtPort;
     
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,6 +32,7 @@ public class SocketActivity extends BaseActivity {
         mEtIP = (EditText) findViewById(R.id.et_ip);
         mTvReceived = (TextView) findViewById(R.id.tv_received);
         mEtContent = (EditText) findViewById(R.id.et_content);
+        mEtPort = (EditText) findViewById(R.id.et_port);
         mBtnSend = findViewById(R.id.btn_send);
         findViewById(R.id.btn_confirm).setOnClickListener(new OnClickListener() {
             @Override
@@ -43,8 +45,6 @@ public class SocketActivity extends BaseActivity {
     private Socket mSocket;
     private BufferedWriter mWriter;
     private BufferedReader mReader;
-    // �мǶ˿ں�һ��Ҫ�ͷ���˱���һ�£�
-    private static int PORT = 2345;
     
     private void connectServer() {
         new Thread(new Runnable() {
@@ -52,7 +52,8 @@ public class SocketActivity extends BaseActivity {
             public void run() {
                 try {
                     String IP = mEtIP.getText().toString().trim();
-                    mSocket = new Socket(IP, PORT);
+                    int port = Integer.valueOf(mEtPort.getText().toString());
+                    mSocket = new Socket(IP, port);
                     mWriter = new BufferedWriter(new OutputStreamWriter(mSocket.getOutputStream(), "utf-8"));
                     mReader = new BufferedReader(new InputStreamReader(mSocket.getInputStream(), "utf-8"));
                     runOnUiThread(new Runnable() {

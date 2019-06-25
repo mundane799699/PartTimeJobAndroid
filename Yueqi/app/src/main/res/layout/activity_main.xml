@@ -28,7 +28,7 @@
 
         <Button
             android:id="@+id/btn_socket"
-            android:text="socket通信"
+            android:text="聊天室"
             android:layout_width="match_parent"
             android:layout_height="wrap_content" />
 

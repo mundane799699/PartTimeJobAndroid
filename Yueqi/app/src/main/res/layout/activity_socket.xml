@@ -32,14 +32,20 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal"
+        android:orientation="vertical"
         >
 
         <EditText
             android:id="@+id/et_ip"
-            android:hint="请输入对方ip地址, 例如:10.0.2.2"
-            android:layout_width="0dp"
-            android:layout_weight="1"
+            android:hint="请输入ip地址, 模拟器通常为10.0.2.2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            />
+
+        <EditText
+            android:id="@+id/et_port"
+            android:hint="请输入端口号, 如2345"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             />
 

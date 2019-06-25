@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#42AED2</color>
+    <color name="colorPrimaryDark">#42AED2</color>
+    <color name="colorAccent">#42AED2</color>
+    <color name="cherokee">#42AED2</color>
+    <color name="colorWhite">#FFFFFF</color>
+    <color name="shakespeare">#42AED2</color>
+    <color name="black">#000000</color>
+    <color name="mulled_wine">#4F4C5C</color>
+    <color name="spray">#77CCE1</color>
+    <color name="curious_blue">#3195C8</color>
+    <color name="carnation">#F85C62</color>
+
+
+</resources>

@@ -32,6 +32,7 @@ public class NoteDAO {
         try {
             db.beginTransaction(); // 以事物的方式插入数据库，这样数据库只需要打开关闭一次
             ContentValues values = new ContentValues();
+            values.put("_id", note._id);
             values.put("flag", note.flag);
             values.put("song_name", note.songName);
             values.put("song_singer", note.songSinger);

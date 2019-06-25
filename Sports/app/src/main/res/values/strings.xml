@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">动漫</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="title_activity_register">注册</string>
+    <string name="title_activity_strategy">主页</string>
+    <string name="title_activity_scenic">ScenicActivity</string>
+    <string name="action_settings">Settings</string>
+    <string name="title_activity_content">ContentActivity</string>
+    <string name="title_activity_delicious">DeliciousActivity</string>
+    <string name="title_activity_architecture">ArchitectureActivity</string>
+    <string name="unregister">该用户还未注册"</string>
+    <string name="passworderror">密码错误!</string>
+    <string name="usernamenotempty">用户名不能为空</string>
+    <string name="passwordnotempty">密码不能为空</string>
+    <string name="passwordnotsame">两次输入的密码不一致</string>
+    <string name="registersuccess">注册成功</string>
+    <string name="registerfail">注册失败</string>
+    <string name="parameter_empty">字段不能为空</string>
+    <string name="youyong">游泳</string>
+    <string name="yoyongd">游泳(Swimming)，是人在水的浮力作用下产生向上漂浮，凭借浮力通过肢体有规律的运动，使身体在水中有规律运动的技能。游泳运动可分为竞技游泳和实用游泳，竞技游泳是奥林匹克运动会中的第二大项目，它包括蝶泳、仰 泳（也称背泳）、蛙泳和捷泳（也称爬泳/自由泳）四种泳姿的竞速项目，以及花样游泳等</string>
+    <string name="manpao">慢跑</string>
+    <string name="manpaod">慢跑（英语：Jogging或称Footing），亦称为缓步、缓跑或缓步跑，是一种中等强度的有氧运动，目的在以较慢或中等的节奏来跑完一段相对较长的距离，以达到热身或锻炼的目的</string>
+    <string name="juzho">举重</string>
+    <string name="juhzongd">举重(Weightlifting)是一项历史悠久的运动，将杠铃以双手举过头，举起的杠铃重量为胜负依据。男子举重在第一届奥林匹克运动会时便被列入正式项目。直到2000年的悉尼奥运时，女子举重才被列入正式项目，虽然早在1987年世界举重锦标赛就已经有女子项目。举重运动员要完成两个举重动作：抓举和挺举。</string>
+    <string name="fwc">俯卧撑</string>
+    <string name="fwcd">俯卧撑（英文：push-up；Press-up。中国大陆称作俯卧撑，中国台湾地区称作伏地挺身，港澳地区称作掌上压），常见的健身运动有助于增加胸大肌锻炼效果 [1]  。 在日常锻炼和体育课上，特别是在军事体能训练中是一项基本训练。俯卧撑主要锻炼上肢、腰部及腹部的肌肉，尤其是胸肌。是很简单易行却十分有效的力量训练手段。初学者练习俯卧撑可以进行两组，每组15到20下；有一定基础的运动者则可做3组，每组20下；高水平人士可以尝试4组30到50下的俯卧撑锻炼。</string>
+
+
+</resources>

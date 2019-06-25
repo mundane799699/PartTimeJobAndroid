@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        >
+
+        <ImageView
+            android:layout_width="68dp"
+            android:layout_height="68dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="20dp"
+            android:src="@drawable/ic_launcher"
+            />
+
+
+        <EditText
+            android:padding="10dp"
+            android:id="@+id/et_username"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_below="@+id/tvLogin"
+            android:layout_marginLeft="4dp"
+            android:layout_marginTop="23dp"
+            android:hint="请输入用户名"
+            android:background="@null"
+            />
+        <View
+            android:background="#e0e0e0"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            />
+
+        <EditText
+            android:padding="10dp"
+            android:id="@+id/et_pwd"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_below="@+id/tvLogin"
+            android:layout_marginLeft="4dp"
+            android:hint="请输入密码"
+            android:inputType="textPassword"
+            android:background="@null"
+            />
+        <View
+            android:background="#e0e0e0"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            />
+
+
+        <Button
+            android:layout_marginTop="10dp"
+            android:id="@+id/btn_login"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:text="登录"
+            android:textColor="@android:color/white"
+            android:textSize="17sp"
+            />
+
+        <Button
+            android:id="@+id/btn_register"
+            android:layout_marginTop="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:text="注册"
+            android:textColor="@android:color/white"
+            android:textSize="17sp"
+            />
+
+    </LinearLayout>
+
+
+
+</RelativeLayout>

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">宠物</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="title_activity_register">注册</string>
+    <string name="title_activity_strategy">主页</string>
+    <string name="title_activity_scenic">ScenicActivity</string>
+    <string name="action_settings">Settings</string>
+    <string name="title_activity_content">ContentActivity</string>
+    <string name="title_activity_delicious">DeliciousActivity</string>
+    <string name="title_activity_architecture">ArchitectureActivity</string>
+    <string name="unregister">该用户还未注册"</string>
+    <string name="passworderror">密码错误!</string>
+    <string name="usernamenotempty">用户名不能为空</string>
+    <string name="passwordnotempty">密码不能为空</string>
+    <string name="passwordnotsame">两次输入的密码不一致</string>
+    <string name="registersuccess">注册成功</string>
+    <string name="registerfail">注册失败</string>
+    <string name="hasregistered">该用户名已被注册过</string>
+    <string name="parameter_empty">字段不能为空</string>
+    <string name="jinmao">金毛</string>
+    <string name="jinmaodescribe">金毛寻回犬（Golden Retriever）是单猎犬，比较流行的狗的品种。在猎捕野禽的寻回犬中培养出来的，游泳的续航力极佳。 金毛寻回犬是最常见的家犬之一，它很容易养，有耐心并且对主人要求不多，只要定期运动，食物和兽医体检就可以了。它属于匀称、有力、活泼的一个犬种，特征是稳固、身体各部位配合合理，腿既不太长也不笨拙，表情友善，个性热情、机警、自信而且不怕生，性格讨人喜欢。金毛犬最早是一种寻回猎犬，现在大多作为导盲犬与宠物狗。对小孩子或者婴儿十分友善。金毛犬是位列世界犬种智商排行的第四名。</string>
+    <string name="hashiqi">哈士奇</string>
+    <string name="hashiqidescribe">哈士奇犬生性友善，独立性强，尽管非常机警，但在很多情况下缺乏守卫犬的进攻和防守意识。哈士奇犬天生爱清洁，没有许多长毛犬身上的气味。这种犬对生活条件的适应能力极强，但天生喜欢闲逛，所以必须注意看管。</string>
+
+</resources>

@@ -5,7 +5,6 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.view.View.OnClickListener;
-
 import com.example.lvyou.Utils.SPUtil;
 
 public class MainActivity extends Activity implements OnClickListener {
@@ -20,6 +19,12 @@ public class MainActivity extends Activity implements OnClickListener {
         findViewById(R.id.iv_delicious).setOnClickListener(this);
         findViewById(R.id.iv_architecture).setOnClickListener(this);
         findViewById(R.id.iv_socket).setOnClickListener(this);
+        findViewById(R.id.iv_contact).setOnClickListener(new OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(MainActivity.this, ContactListActivity.class));
+            }
+        });
     }
     
     @Override

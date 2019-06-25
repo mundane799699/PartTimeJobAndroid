@@ -27,6 +27,9 @@ public class DBOpenHelper extends SQLiteOpenHelper {
     
         String arcSql = "create table tb_architecture (name text, describe text, drawableName text)";
         db.execSQL(arcSql);
+    
+        String contactSql = "create table tb_contact (name text, phone text, relation text)";
+        db.execSQL(contactSql);
     }
     
     @Override

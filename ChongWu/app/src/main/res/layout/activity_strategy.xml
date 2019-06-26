@@ -23,6 +23,7 @@
             />
 
         <Button
+            android:layout_marginTop="10dp"
             android:background="@drawable/shape_orange"
 
             android:id="@+id/btn_cat"
@@ -32,6 +33,8 @@
             />
 
         <Button
+            android:layout_marginTop="10dp"
+
             android:background="@drawable/shape_orange"
 
             android:id="@+id/btn_socket"
@@ -42,6 +45,8 @@
 
 
         <Button
+            android:layout_marginTop="10dp"
+
             android:background="@drawable/shape_orange"
 
             android:id="@+id/btn_collect"

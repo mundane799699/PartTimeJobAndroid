@@ -15,6 +15,7 @@
         >
 
         <Button
+            android:background="@drawable/shape_orange"
             android:id="@+id/btn_dog"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -22,6 +23,8 @@
             />
 
         <Button
+            android:background="@drawable/shape_orange"
+
             android:id="@+id/btn_cat"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -29,17 +32,22 @@
             />
 
         <Button
+            android:background="@drawable/shape_orange"
+
             android:id="@+id/btn_socket"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="聊天室"
             />
 
+
         <Button
+            android:background="@drawable/shape_orange"
+
             android:id="@+id/btn_collect"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="查看收藏的歌曲"
+            android:text="查看收藏的宠物"
             />
 
 

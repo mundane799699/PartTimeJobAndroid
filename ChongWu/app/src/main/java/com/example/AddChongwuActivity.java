@@ -6,8 +6,8 @@ import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.EditText;
 import com.example.base.BaseActivity;
-import com.example.bean.Song;
-import com.example.dao.SongDao;
+import com.example.bean.Chongwu;
+import com.example.dao.ChongwuDao;
 
 /**
  * AddSongActivity
@@ -15,12 +15,12 @@ import com.example.dao.SongDao;
  * @author fangyuan
  * @date 2019-06-25
  */
-public class AddSongActivity extends BaseActivity {
+public class AddChongwuActivity extends BaseActivity {
     
     private EditText mEtName;
     private EditText mEtPhone;
     private EditText mEtRelation;
-    private SongDao mDao;
+    private ChongwuDao mDao;
     
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,7 +29,7 @@ public class AddSongActivity extends BaseActivity {
         mEtName = (EditText) findViewById(R.id.et_name);
         mEtPhone = (EditText) findViewById(R.id.et_phone);
         mEtRelation = (EditText) findViewById(R.id.et_relation);
-        mDao = new SongDao(this);
+        mDao = new ChongwuDao(this);
         findViewById(R.id.btn_save).setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -47,10 +47,10 @@ public class AddSongActivity extends BaseActivity {
             showMessage(getString(R.string.parameter_empty));
             return;
         }
-        Song song = new Song();
+        Chongwu song = new Chongwu();
         song.name = name;
-        song.singer = phone;
-        song.album = relation;
+        song.type = phone;
+        song.size = relation;
         mDao.add(song);
         finish();
     }

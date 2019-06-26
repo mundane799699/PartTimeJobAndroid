@@ -6,8 +6,8 @@ package com.example.bean;
  * @author fangyuan
  * @date 2019-06-25
  */
-public class Song {
+public class Chongwu {
     public String name;
-    public String singer;
-    public String album;
+    public String type;
+    public String size;
 }

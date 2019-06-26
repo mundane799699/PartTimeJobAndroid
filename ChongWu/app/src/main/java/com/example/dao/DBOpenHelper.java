@@ -28,8 +28,8 @@ public class DBOpenHelper extends SQLiteOpenHelper {
         String arcSql = "create table tb_architecture (name text, describe text, drawableName text)";
         db.execSQL(arcSql);
     
-        String songSql = "create table tb_song (name text, singer text, album text)";
-        db.execSQL(songSql);
+        String chongwuSql = "create table tb_chongwu (name text, type text, size text)";
+        db.execSQL(chongwuSql);
     }
     
     @Override

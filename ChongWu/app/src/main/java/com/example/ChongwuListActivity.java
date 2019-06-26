@@ -7,9 +7,8 @@ import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.ListView;
 import com.example.adapter.SongAdapter;
-import com.example.bean.Song;
-import com.example.dao.SongDao;
-import com.example.R;
+import com.example.bean.Chongwu;
+import com.example.dao.ChongwuDao;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -19,18 +18,18 @@ import java.util.List;
  * @author fangyuan
  * @date 2019-06-25
  */
-public class SongListActivity extends Activity {
+public class ChongwuListActivity extends Activity {
     
     private ListView mLv;
-    private List<Song> mList = new ArrayList<Song>();
+    private List<Chongwu> mList = new ArrayList<Chongwu>();
     private SongAdapter mAdapter;
-    private SongDao mDao;
+    private ChongwuDao mDao;
     private View mBtnAdd;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_song_list);
-        mDao = new SongDao(this);
+        mDao = new ChongwuDao(this);
         mLv = (ListView) findViewById(R.id.lv);
         mBtnAdd = findViewById(R.id.btn_add);
         mBtnAdd.setOnClickListener(new OnClickListener() {
@@ -50,7 +49,7 @@ public class SongListActivity extends Activity {
     }
     
     private void queryAllContacts() {
-        List<Song> list = mDao.queryAllSongs();
+        List<Chongwu> list = mDao.queryAllSongs();
         if (list != null && !list.isEmpty()) {
             mList.clear();
             mList.addAll(list);
@@ -59,6 +58,6 @@ public class SongListActivity extends Activity {
     }
     
     private void goToAddSongActivity() {
-        startActivity(new Intent(this, AddSongActivity.class));
+        startActivity(new Intent(this, AddChongwuActivity.class));
     }
 }

@@ -6,7 +6,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.TextView;
-import com.example.bean.Song;
+import com.example.bean.Chongwu;
 import com.example.R;
 import java.util.List;
 
@@ -18,9 +18,9 @@ import java.util.List;
  */
 public class SongAdapter extends BaseAdapter {
     Context context;
-    List<Song> list;
+    List<Chongwu> list;
     
-    public SongAdapter(Context context, List<Song> list) {
+    public SongAdapter(Context context, List<Chongwu> list) {
         this.context = context;
         this.list = list;
     }
@@ -31,7 +31,7 @@ public class SongAdapter extends BaseAdapter {
     }
     
     @Override
-    public Song getItem(int i) {
+    public Chongwu getItem(int i) {
         return list.get(i);
     }
     
@@ -52,10 +52,10 @@ public class SongAdapter extends BaseAdapter {
             holder = (Myholder) convertView.getTag();
         }
         
-        Song song = list.get(position);
+        Chongwu song = list.get(position);
         holder.tvName.setText(song.name);
-        holder.tvSinger.setText(song.singer);
-        holder.tvAlbum.setText(song.album);
+        holder.tvSinger.setText(song.type);
+        holder.tvAlbum.setText(song.size);
         return convertView;
     }
     

@@ -9,7 +9,7 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="曲名:"
+        android:text="宠物名字:"
         />
 
     <TextView
@@ -21,7 +21,7 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="歌手:"
+        android:text="宠物品种:"
         />
 
     <TextView
@@ -33,7 +33,7 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="专辑:"
+        android:text="宠物大小:"
         />
 
     <TextView

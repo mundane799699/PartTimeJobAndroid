@@ -25,7 +25,7 @@
 
     <application
         android:allowBackup="true"
-        android:icon="@drawable/dog"
+        android:icon="@drawable/ic_launcher"
         android:label="@string/app_name"
         android:theme="@style/AppTheme" >
         <activity
@@ -62,8 +62,8 @@
             >
         </activity>
         <activity android:name="com.example.SocketActivity"/>
-        <activity android:name="com.example.SongListActivity"/>
-        <activity android:name="com.example.AddSongActivity"/>
+        <activity android:name="com.example.ChongwuListActivity"/>
+        <activity android:name="com.example.AddChongwuActivity"/>
     </application>
 
 </manifest>

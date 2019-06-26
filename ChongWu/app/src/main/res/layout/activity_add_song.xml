@@ -22,7 +22,7 @@
             android:layout_marginLeft="4dp"
             android:layout_marginTop="23dp"
             android:background="@null"
-            android:hint="请输入歌曲名"
+            android:hint="请输入宠物名字"
             android:padding="10dp"
             />
 
@@ -40,7 +40,7 @@
             android:layout_below="@+id/tvLogin"
             android:layout_marginLeft="4dp"
             android:background="@null"
-            android:hint="请输入歌手名"
+            android:hint="请输入宠物品种"
             android:padding="10dp"
             />
 
@@ -58,7 +58,7 @@
             android:layout_below="@+id/tvLogin"
             android:layout_marginLeft="4dp"
             android:background="@null"
-            android:hint="请输入专辑名"
+            android:hint="请输入宠物大小"
             android:padding="10dp"
             />
 

@@ -50,11 +50,11 @@ public class LoginActivity extends BaseActivity {
                 List<User> allRegisterUsers = pwdDAO.queryAllUsers();
                 boolean ifHasThisUser = CheckUtils.checkHasThisUser(allRegisterUsers, username);
                 if (!ifHasThisUser) {
-                    showMessage("���û���δע��");
+                    showMessage(getString(R.string.notregister));
                     return;
                 }
                 if (pwdDAO.find(username, password) == null) {
-                    Toast.makeText(LoginActivity.this, "�������!", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(LoginActivity.this, R.string.pwderror, Toast.LENGTH_SHORT).show();
                 } else {
                     AppPreference.saveUsername(username);
                     AppPreference.savePassword(password);
@@ -67,9 +67,9 @@ public class LoginActivity extends BaseActivity {
         String password = AppPreference.getPassword();
         String username = AppPreference.getUsername();
         UserDAO pwdDAO = new UserDAO(this);
-        if (pwdDAO.find(username, password) != null) {
-            startActivity(new Intent(this, MainActivity.class));
-            finish();
-        }
+        //if (pwdDAO.find(username, password) != null) {
+        //    startActivity(new Intent(this, MainActivity.class));
+        //    finish();
+        //}
     }
 }

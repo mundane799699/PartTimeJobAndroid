@@ -4,7 +4,7 @@ import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
-import com.example.bean.Song;
+import com.example.bean.Chongwu;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -14,25 +14,25 @@ import java.util.List;
  * @author fangyuan
  * @date 2019-06-25
  */
-public class SongDao {
+public class ChongwuDao {
     
     private DBOpenHelper helper;
     private SQLiteDatabase db;
     
-    public SongDao(Context context) {
+    public ChongwuDao(Context context) {
         helper = new DBOpenHelper(context);
         db = helper.getWritableDatabase();
     }
     
     // 增
-    public void add(Song song) {
+    public void add(Chongwu song) {
         try {
             db.beginTransaction(); // 以事物的方式插入数据库，这样数据库只需要打开关闭一次
             ContentValues values = new ContentValues();
             values.put("name", song.name);
-            values.put("singer", song.singer);
-            values.put("album", song.album);
-            db.insert("tb_song", null, values);
+            values.put("type", song.type);
+            values.put("size", song.size);
+            db.insert("tb_chongwu", null, values);
             db.setTransactionSuccessful(); // 事物成功， 一次写入数据库， 这一句真正到数据库里
         } catch (Exception e) {
             e.printStackTrace();
@@ -45,17 +45,17 @@ public class SongDao {
         }
     }
     
-    public List<Song> queryAllSongs() {
-        String sql = "select * from tb_song";
+    public List<Chongwu> queryAllSongs() {
+        String sql = "select * from tb_chongwu";
         Cursor cursor = null;
-        List<Song> list = new ArrayList<Song>();
+        List<Chongwu> list = new ArrayList<Chongwu>();
         try {
             cursor = db.rawQuery(sql, null);
             while (cursor.moveToNext()) {
-                Song contact = new Song();
+                Chongwu contact = new Chongwu();
                 contact.name = cursor.getString(cursor.getColumnIndex("name"));
-                contact.singer = cursor.getString(cursor.getColumnIndex("singer"));
-                contact.album = cursor.getString(cursor.getColumnIndex("album"));
+                contact.type = cursor.getString(cursor.getColumnIndex("type"));
+                contact.size = cursor.getString(cursor.getColumnIndex("size"));
                 list.add(contact);
             }
             return list;

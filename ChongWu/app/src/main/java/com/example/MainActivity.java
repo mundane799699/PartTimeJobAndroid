@@ -6,7 +6,6 @@ import android.os.Bundle;
 import android.view.View;
 import android.view.View.OnClickListener;
 import com.example.Utils.SPUtil;
-import com.example.R;
 
 public class MainActivity extends Activity implements OnClickListener {
     
@@ -22,14 +21,14 @@ public class MainActivity extends Activity implements OnClickListener {
         findViewById(R.id.btn_collect).setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View view) {
-                goToSongListActivity();
+                goToChongwuListActivity();
         
             }
         });
     }
     
-    private void goToSongListActivity() {
-        startActivity(new Intent(this, SongListActivity.class));
+    private void goToChongwuListActivity() {
+        startActivity(new Intent(this, ChongwuListActivity.class));
     }
     
     @Override

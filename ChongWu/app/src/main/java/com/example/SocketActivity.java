@@ -58,9 +58,9 @@ public class SocketActivity extends BaseActivity {
                     runOnUiThread(new Runnable() {
                         @Override
                         public void run() {
-                            showMessage("连接成功");
+                            showMessage(getString(R.string.connectsuccess));
                             mEtIP.setEnabled(false);
-                            mBtnSend.setOnClickListener(new View.OnClickListener() {
+                            mBtnSend.setOnClickListener(new OnClickListener() {
                                 @Override
                                 public void onClick(View view) {
                                     String content = mEtContent.getText().toString();
@@ -75,7 +75,7 @@ public class SocketActivity extends BaseActivity {
                     runOnUiThread(new Runnable() {
                         @Override
                         public void run() {
-                            showMessage("连接失败");
+                            showMessage(getString(R.string.connectfail));
                         }
                     });
                     e.printStackTrace();
@@ -100,7 +100,7 @@ public class SocketActivity extends BaseActivity {
                         @Override
                         public void run() {
                             String text = mTvReceived.getText().toString();
-                            mTvReceived.setText(text + "\n服务端已停止服务");
+                            mTvReceived.setText(text + getString(R.string.serverstop));
                         }
                     });
                 }
@@ -120,7 +120,7 @@ public class SocketActivity extends BaseActivity {
                     runOnUiThread(new Runnable() {
                         @Override
                         public void run() {
-                            showMessage("连接未完成或连接失败，无法发送消息！");
+                            showMessage(getString(R.string.connectfail2));
                         }
                     });
                     return;
@@ -132,7 +132,7 @@ public class SocketActivity extends BaseActivity {
                         @Override
                         public void run() {
                             String text = mTvReceived.getText().toString();
-                            mTvReceived.setText(text + "\n你:" + msg + "\n");
+                            mTvReceived.setText(text + getString(R.string.you) + msg + "\n");
                             mEtContent.setText(null);
                         }
                     });
@@ -141,7 +141,7 @@ public class SocketActivity extends BaseActivity {
                     runOnUiThread(new Runnable() {
                         @Override
                         public void run() {
-                            showMessage("发送失败：服务端已关闭服务！");
+                            showMessage(getString(R.string.serverclose));
                         }
                     });
                     e.printStackTrace();

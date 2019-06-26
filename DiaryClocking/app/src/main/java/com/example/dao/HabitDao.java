@@ -25,10 +25,15 @@ public class HabitDao {
     
     public void updateHabit(Habit habit) {
         updateCardTimes(habit);
-        updateTodayStatus(habit);
         updateStatus(habit);
         updateName(habit);
         updateWords(habit);
+        updateLastCardDate(habit);
+    }
+    
+    private void updateLastCardDate(Habit habit) {
+        String sql = "update tb_habit set lastCardDate=? where _id =?";
+        db.execSQL(sql, new Object[] { habit.lastCardDate, habit._id });
     }
     
     private void updateWords(Habit habit) {
@@ -37,7 +42,8 @@ public class HabitDao {
     }
     
     private void updateName(Habit habit) {
-        db.execSQL("update tb_habit set name=?where _id=?", new Object[] { habit.name, habit._id });
+        String sql = "update tb_habit set name=?where _id=?";
+        db.execSQL(sql, new Object[] { habit.name, habit._id });
     }
     
     // 改(主要是修改次数)
@@ -50,10 +56,6 @@ public class HabitDao {
         db.execSQL("update tb_habit set status=?where _id=?", new Object[] { habit.status, habit._id });
     }
     
-    // 修改今天是否打卡
-    private void updateTodayStatus(Habit habit) {
-        db.execSQL("update tb_habit set todayStatus=?where _id=?", new Object[] { habit.todayStatus, habit._id });
-    }
     
     // 查询所有
     public List<Habit> queryAllHabits() {
@@ -69,7 +71,7 @@ public class HabitDao {
                 habit.words = cursor.getString(cursor.getColumnIndex("words"));
                 habit.status = cursor.getInt(cursor.getColumnIndex("status"));
                 habit.cardtimes = cursor.getInt(cursor.getColumnIndex("cardtimes"));
-                habit.todayStatus = cursor.getInt(cursor.getColumnIndex("todayStatus"));
+                habit.lastCardDate = cursor.getString(cursor.getColumnIndex("lastCardDate"));
                 list.add(habit);
             }
             return list;

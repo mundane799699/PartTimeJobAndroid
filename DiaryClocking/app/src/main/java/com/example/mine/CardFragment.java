@@ -4,6 +4,7 @@ import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
+import android.text.TextUtils;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.View.OnClickListener;
@@ -46,8 +47,12 @@ public class CardFragment extends Fragment {
         mTvWeek = view.findViewById(R.id.tv_week);
         mTvWeek.setText(DateUtil.getWeek());
         mTvDate = view.findViewById(R.id.tv_date);
-        mCurrentDate = DateUtil.getFormatDate("MM月dd日,yyyy");
+        mCurrentDate = DateUtil.getFormatDate();
         mTvDate.setText(mCurrentDate);
+        initCardGet();
+    }
+    
+    private void initCardGet() {
         boolean hasGetCard = SPUtil.getBoolean(mCurrentDate, false);
         if (!hasGetCard) {
             mTvGetCard.setText("领取今日卡片");
@@ -59,6 +64,7 @@ public class CardFragment extends Fragment {
             });
         } else {
             mTvGetCard.setText("已领取");
+            mLlCard.setVisibility(View.VISIBLE);
         }
     }
     
@@ -66,6 +72,7 @@ public class CardFragment extends Fragment {
     public void onHiddenChanged(boolean hidden) {
         super.onHiddenChanged(hidden);
         initViewStatus();
+        initCardGet();
     }
     
     private void initViewStatus() {
@@ -73,7 +80,9 @@ public class CardFragment extends Fragment {
         List<Habit> list = mHabitDao.queryAllHabits();
         if (list != null) {
             for (Habit habit : list) {
-                if (habit.todayStatus != 0) {
+                String lastCardDate = habit.lastCardDate;
+                String today = DateUtil.getFormatDate();
+                if (TextUtils.equals(today, lastCardDate)) {
                     todayAllCardTimes++;
                 }
             }

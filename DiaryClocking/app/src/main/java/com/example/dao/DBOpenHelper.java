@@ -18,8 +18,11 @@ public class DBOpenHelper extends SQLiteOpenHelper {
         
         // status: 0表示未结束, 1表示已经结束
         // todayStatus: 0表示今天未打卡, 1表示今天已打卡
-        String sql = "create table tb_habit (_id integer primary key, name varchar(200), words varchar(200), status integer, cardtimes integer, todayStatus integer)";
-        db.execSQL(sql);
+        // lastCardDate表示最后一次打卡该习惯的时间, 默认为空
+        // 如果lastCardDate和今天的日期一样, 表示今天已经打卡
+        String habitSql = "create table tb_habit (_id integer primary key, name varchar(200), words varchar(200), status integer, cardtimes integer, lastCardDate text)";
+        
+        db.execSQL(habitSql);
     }
     
     @Override

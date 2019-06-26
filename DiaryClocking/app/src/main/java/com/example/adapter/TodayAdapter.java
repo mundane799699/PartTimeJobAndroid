@@ -1,5 +1,6 @@
 package com.example.adapter;
 
+import android.text.TextUtils;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -7,6 +8,7 @@ import android.widget.BaseAdapter;
 import android.widget.TextView;
 import com.example.model.Habit;
 import com.example.myapp.R;
+import com.example.utils.DateUtil;
 import java.util.List;
 
 /**
@@ -50,9 +52,9 @@ public class TodayAdapter extends BaseAdapter {
         Habit habit = mDataList.get(position);
         holder.mTvCardTimes.setText(String.format("完成%d天", habit.cardtimes));
         holder.mTvName.setText(habit.name);
-        // todayStatus: 0表示今天未打卡, 1表示今天已打卡
-        int todayStatus = habit.todayStatus;
-        if (todayStatus == 0) {
+        String lastCardDate = habit.lastCardDate;
+        String today = DateUtil.getFormatDate();
+        if (!TextUtils.equals(today, lastCardDate)) {
             holder.mTvTodayStatus.setText("今日未打卡");
         } else {
             holder.mTvTodayStatus.setText("今日已打卡");

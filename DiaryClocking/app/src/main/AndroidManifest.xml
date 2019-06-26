@@ -28,8 +28,6 @@
         </activity>
         <activity android:name="com.example.addhabit.AddHabitActivity">
         </activity>
-        <activity android:name="com.example.card.CardActivity">
-        </activity>
         <activity android:name="com.example.main.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>

@@ -8,6 +8,7 @@ import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AlertDialog.Builder;
+import android.text.TextUtils;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.View.OnClickListener;
@@ -17,10 +18,10 @@ import android.widget.AdapterView.OnItemClickListener;
 import android.widget.ListView;
 import com.example.adapter.TodayAdapter;
 import com.example.addhabit.AddHabitActivity;
-import com.example.card.CardActivity;
 import com.example.dao.HabitDao;
 import com.example.model.Habit;
 import com.example.myapp.R;
+import com.example.utils.DateUtil;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -69,11 +70,11 @@ public class TodayFragment extends Fragment {
     
     private void changeCardStatus(int position) {
         Habit habit = mList.get(position);
-        // todayStatus: 0表示今天未打卡, 1表示今天已打卡
-        int todayStatus = habit.todayStatus;
-        if (todayStatus == 0) {
+        String lastCardDate = habit.lastCardDate;
+        String today = DateUtil.getFormatDate();
+        if (!TextUtils.equals(today, lastCardDate)) {
             // 打卡
-            habit.todayStatus = 1;
+            habit.lastCardDate = today;
             habit.cardtimes++;
             mHabitDao.updateHabit(habit);
             queryHabits();
@@ -88,7 +89,7 @@ public class TodayFragment extends Fragment {
         builder.setMessage("确定要取消打卡吗?").setPositiveButton("确定", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {
-                habit.todayStatus = 0;
+                habit.lastCardDate = "";
                 habit.cardtimes--;
                 mHabitDao.updateHabit(habit);
                 queryHabits();
@@ -122,7 +123,4 @@ public class TodayFragment extends Fragment {
         startActivity(new Intent(getContext(), AddHabitActivity.class));
     }
     
-    private void goToCardActivity() {
-        startActivity(new Intent(getContext(), CardActivity.class));
-    }
 }

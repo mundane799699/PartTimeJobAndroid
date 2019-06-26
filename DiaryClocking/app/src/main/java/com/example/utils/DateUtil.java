@@ -531,7 +531,8 @@ public class DateUtil {
         return sdf.format(date);
     }
     
-    public static String getFormatDate(String format) {
+    public static String getFormatDate() {
+        String format = "MM月dd日,yyyy";
         Date date = new Date();
         SimpleDateFormat sdf = new SimpleDateFormat(format);
         return sdf.format(date);

@@ -1,4 +1,4 @@
-<LinearLayout
+<FrameLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -7,40 +7,70 @@
     android:padding="16dp"
     >
 
+
     <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         >
 
-        <Button
-            android:id="@+id/btn_youyang"
-            android:text="有氧运动"
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:orientation="horizontal"
+            >
 
-        <Button
-            android:id="@+id/btn_wuyang"
-            android:text="无氧运动"
+            <Button
+                android:background="@android:color/holo_blue_light"
+                android:layout_marginRight="10dp"
+                android:id="@+id/btn_youyang"
+                android:text="有氧运动"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content" />
+
+            <Button
+                android:background="@android:color/holo_green_light"
+                android:layout_marginLeft="10dp"
+                android:id="@+id/btn_wuyang"
+                android:text="无氧运动"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_marginTop="20dp"
+            android:orientation="horizontal"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"
+            >
 
-        <Button
-            android:id="@+id/btn_socket"
-            android:text="socket通信"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
+            <Button
+                android:background="@android:color/darker_gray"
+                android:layout_marginRight="10dp"
+                android:id="@+id/btn_socket"
+                android:text="socket通信"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content" />
 
-        <Button
-            android:id="@+id/btn_contacts"
-            android:text="添加通讯录"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
+            <Button
+                android:background="@android:color/holo_red_light"
+                android:layout_marginLeft="10dp"
+                android:id="@+id/btn_contacts"
+                android:text="添加通讯录"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content" />
 
-
+        </LinearLayout>
 
     </LinearLayout>
 
 
-</LinearLayout>
+
+</FrameLayout>

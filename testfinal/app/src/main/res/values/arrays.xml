@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+           <string-array name="placelist1">
+        <item>辽宁</item>
+        <item>吉林</item>
+        <item>浙江</item>
+        <item>黑龙江</item>
+   </string-array>
+    <string-array name="placelist2">
+        <item>鞍山</item>
+        <item>大连</item>
+        <item>长春</item>
+        <item>哈尔滨</item>
+   </string-array>
+</resources>

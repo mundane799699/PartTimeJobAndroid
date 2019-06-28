@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" 
+    android:background="@drawable/image">
+    
+    <LinearLayout 
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:paddingLeft="20sp"
+    android:paddingTop="20px">
+    <TextView
+        android:id="@+id/name2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="20sp"
+        android:text="用户名:" />
+
+    <EditText
+        android:id="@+id/name_edit2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="请输入用户名:" >
+ 
+    </EditText>
+</LinearLayout>
+
+<LinearLayout 
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:paddingLeft="20sp"
+    android:paddingTop="10px">
+    <TextView
+        android:id="@+id/pass2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="20sp"
+        android:text="密     码:" />
+
+    <EditText
+        android:id="@+id/pass_edit2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:password="true"
+        android:hint="请输入密码" />
+</LinearLayout>
+
+<LinearLayout 
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:paddingLeft="20sp"
+    android:paddingTop="10px">
+    <TextView
+        android:id="@+id/number2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="20sp"
+        android:text="手机号:" />
+
+    <EditText
+        android:id="@+id/number_edit2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="请输入手机号" />
+</LinearLayout>
+
+ <LinearLayout 
+        android:layout_width="wrap_content"
+    	android:layout_height="wrap_content"
+    	android:orientation="horizontal"
+    	android:layout_marginLeft="20sp"
+    	android:paddingTop="20px">
+
+        <TextView
+            android:id="@+id/sextext1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="20sp"
+            android:layout_marginTop="5sp" 
+            android:text="性别" />
+
+		<RadioGroup 
+		    android:id="@+id/sex"
+        	android:layout_width="match_parent"
+        	android:layout_height="wrap_content"
+        	android:orientation="horizontal"
+        	android:contentDescription="性别">
+        	<RadioButton 
+        	    android:id="@+id/female"
+        		android:layout_width="wrap_content"
+        		android:layout_height="wrap_content"
+        		android:textSize="18sp"
+        		android:layout_marginLeft="25sp"
+       	 		android:text="女"/>
+		    <RadioButton 
+        	    android:id="@+id/male"
+        		android:layout_width="wrap_content"
+        		android:layout_height="wrap_content"
+        		android:textSize="18sp"
+        		android:layout_marginLeft="15sp"
+       	 		android:text="男"/>
+		</RadioGroup>
+    </LinearLayout>
+    <LinearLayout 
+        android:layout_width="match_parent"
+    	android:layout_height="wrap_content"
+    	android:orientation="horizontal">
+       <Button 
+        android:id="@+id/datebutton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="生日"
+        android:textSize="18sp"
+        android:background="#0000"
+        android:onClick="date_select"/>
+    <TextView 
+        android:id="@+id/datetext"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text=""
+        android:layout_marginLeft="140sp"
+        android:textSize="18sp"/>
+    </LinearLayout>
+    
+    <LinearLayout 
+        android:layout_width="match_parent"
+    	android:layout_height="wrap_content"
+    	android:orientation="horizontal">
+        <TextView 
+            android:id="@+id/place"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="出生地"
+            android:textSize="18sp"/>
+        <Spinner 
+	   		android:id="@+id/sp1"
+      		android:layout_width="wrap_content"
+       		android:layout_height="wrap_content"
+       		android:entries="@array/placelist1"/>
+        <Spinner 
+	   		android:id="@+id/sp2"
+      		android:layout_width="wrap_content"
+       		android:layout_height="wrap_content"
+       		android:entries="@array/placelist2"/>
+    </LinearLayout>
+  
+
+    
+ <Button
+        android:id="@+id/zc2_button"
+	    android:layout_marginTop="20dip"
+	    android:layout_width="match_parent"
+	    android:layout_height="wrap_content"	    
+	 
+		android:textColor="#FFFFFF"
+	    android:layout_marginLeft="50dip"
+	    android:layout_marginRight="50dip"
+	    android:onClick="zc2"
+	    android:text="注册" />
+
+</LinearLayout>

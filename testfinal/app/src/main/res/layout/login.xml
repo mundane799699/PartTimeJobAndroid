@@ -1,0 +1,98 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".Youyang" 
+    android:background="@drawable/image">
+<ImageView
+     android:id="@+id/i1"
+     android:layout_width="120dp"
+     android:layout_height="120dp"
+     android:scaleType="centerCrop"
+     android:layout_gravity="center_horizontal"
+     android:src="@drawable/welcome" />
+<LinearLayout 
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:paddingLeft="20sp"
+    android:paddingTop="20px">
+    <TextView
+        android:id="@+id/name1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="20sp"
+        android:text="用户名:" />
+
+    <EditText
+        android:id="@+id/name_edit1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="请输入用户名" >
+ 
+    </EditText>
+</LinearLayout>
+
+<LinearLayout 
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:paddingLeft="20sp">
+    <TextView
+        android:id="@+id/pass1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="20sp"
+        android:text="密     码:" />
+
+    <EditText
+        android:id="@+id/pass_edit1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:password="true"
+        android:hint="请输入密码" />
+</LinearLayout>
+	<CheckBox 
+	    android:layout_width="wrap_content"
+    	android:layout_height="wrap_content"
+    	android:layout_marginLeft="20sp"
+    	android:textSize="15sp"
+    	android:textColor="#5B5B5B"
+    	android:text="记住我的选择" />
+
+	<CheckBox 
+	    android:layout_width="wrap_content"
+    	android:layout_height="wrap_content"
+    	android:layout_marginLeft="20sp"
+    	android:textSize="15sp"
+    	android:textColor="#5B5B5B"
+    	android:text="记住密码" />
+	
+<RelativeLayout 
+	    android:layout_width="wrap_content"
+	    android:layout_height="wrap_content"
+	    android:layout_gravity="center_horizontal">
+	    
+	    <Button 
+	        android:id="@+id/zc_button"
+	    	android:layout_width="wrap_content"
+	    	android:layout_height="wrap_content"
+	    	android:layout_marginTop="5dip"
+	    	android:textColor="#5B5B5B"
+	    	android:layout_toRightOf="@+id/wj_button"
+	    	android:text="注册账号"
+	    	android:onClick="zc"/>
+	</RelativeLayout>
+	<Button
+		    android:id="@+id/dl_button"
+		    android:layout_width="match_parent"
+		    android:layout_height="wrap_content"
+		    android:layout_marginTop="30dp"
+			android:layout_marginLeft="40dip"
+			android:layout_marginRight="40dip"
+			android:onClick="dl"
+			android:radius="5dip" 
+		    android:text="登录" />
+
+</LinearLayout>

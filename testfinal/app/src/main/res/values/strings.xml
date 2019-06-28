@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">零食</string>
+    <string name="action_settings">Settings</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="zc">注册页面</string>
+    <string name="xq">宝贝详情</string>
+    <string name="js"></string>
+    
+</resources>

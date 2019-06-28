@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+    <LinearLayout 
+	    android:layout_width="match_parent"
+	    android:layout_height="wrap_content"
+	    android:orientation="horizontal"
+	    android:paddingLeft="20sp"
+	    android:paddingTop="10px">
+	     <TextView
+       		android:id="@+id/_id" 
+       		android:layout_width="wrap_content"
+        	android:layout_height="wrap_content"
+        	android:gravity="center"
+        	android:layout_marginLeft="10sp"
+        	android:text="1"/>
+	<TextView
+        android:id="@+id/name2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="20sp"
+        android:text="用户名:" />
+	<TextView
+       		android:id="@+id/_name" 
+       		android:layout_width="wrap_content"
+        	android:layout_height="wrap_content"
+        	android:gravity="center"
+        	android:layout_marginLeft="10sp"
+        	android:text="1"/>
+
+    </LinearLayout>
+     <LinearLayout 
+	    android:layout_width="match_parent"
+	    android:layout_height="wrap_content"
+	    android:orientation="horizontal"
+	    android:paddingLeft="20sp"
+	    android:paddingTop="10px">
+    <TextView
+        android:id="@+id/pass"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="20sp"
+        android:text="密     码:" />
+
+	<TextView
+       		android:id="@+id/_pass" 
+       		android:layout_width="wrap_content"
+        	android:layout_height="wrap_content"
+        	android:gravity="center"
+        	android:layout_marginLeft="10sp"
+        	android:text="1"/>
+    </LinearLayout>
+     <LinearLayout 
+	    android:layout_width="match_parent"
+	    android:layout_height="wrap_content"
+	    android:orientation="horizontal"
+	    android:paddingLeft="20sp"
+	    android:paddingTop="10px">
+	<TextView
+        android:id="@+id/number2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="20sp"
+        android:text="手机号:" />
+
+	<TextView
+       		android:id="@+id/_tel" 
+       		android:layout_width="wrap_content"
+        	android:layout_height="wrap_content"
+        	android:gravity="center"
+        	android:layout_marginLeft="10sp"
+        	android:text="1"/>
+    </LinearLayout>
+ 
+	   
+</LinearLayout>

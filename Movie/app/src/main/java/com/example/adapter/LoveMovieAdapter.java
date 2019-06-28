@@ -5,19 +5,17 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
-import android.widget.ImageView;
 import android.widget.TextView;
 import com.example.R;
-import com.example.Utils.MResource;
-import com.example.bean.ActionMovie;
+import com.example.bean.LoveMovie;
 import java.util.List;
 
-public class SceneAdapter extends BaseAdapter {
+public class LoveMovieAdapter extends BaseAdapter {
     
     private Context context;
-    private List<ActionMovie> list;
+    private List<LoveMovie> list;
     
-    public SceneAdapter(Context context, List<ActionMovie> list) {
+    public LoveMovieAdapter(Context context, List<LoveMovie> list) {
         this.context = context;
         this.list = list;
     }
@@ -36,7 +34,6 @@ public class SceneAdapter extends BaseAdapter {
     
     @Override
     public long getItemId(int arg0) {
-        // TODO Auto-generated method stub
         return arg0;
     }
     
@@ -46,14 +43,13 @@ public class SceneAdapter extends BaseAdapter {
             convertView = LayoutInflater.from(context).inflate(R.layout.item_information, parent, false);
         }
         
-        ActionMovie scene = list.get(position);
-        ImageView iv = (ImageView) convertView.findViewById(R.id.iv_item);
+        LoveMovie movie = list.get(position);
         TextView tv_title = (TextView) convertView.findViewById(R.id.tv_item_title);
         TextView tv_content = (TextView) convertView.findViewById(R.id.tv_item_content);
-        
-        iv.setImageResource(MResource.getIdByDrawableName(context, scene.drawableName));
-        tv_title.setText(scene.name);
-        tv_content.setText(scene.describe);
+        TextView tvDate = (TextView) convertView.findViewById(R.id.tv_date);
+        tv_title.setText(movie.name);
+        tv_content.setText(movie.describe);
+        tvDate.setText(movie.date);
         
         return convertView;
     }

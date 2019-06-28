@@ -16,11 +16,11 @@ import java.util.List;
  * @author fangyuan
  * @date 2019-06-23
  */
-public class SongAdapter extends BaseAdapter {
+public class BianJianAdapter extends BaseAdapter {
     Context context;
     List<BianJian> list;
     
-    public SongAdapter(Context context, List<BianJian> list) {
+    public BianJianAdapter(Context context, List<BianJian> list) {
         this.context = context;
         this.list = list;
     }

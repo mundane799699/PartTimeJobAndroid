@@ -5,19 +5,17 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
-import android.widget.ImageView;
 import android.widget.TextView;
 import com.example.R;
-import com.example.Utils.MResource;
-import com.example.bean.LoveMovie;
+import com.example.bean.ActionMovie;
 import java.util.List;
 
-public class FoodAdapter extends BaseAdapter {
+public class ActionMovieAdapter extends BaseAdapter {
     
     private Context context;
-    private List<LoveMovie> list;
+    private List<com.example.bean.ActionMovie> list;
     
-    public FoodAdapter(Context context, List<LoveMovie> list) {
+    public ActionMovieAdapter(Context context, List<com.example.bean.ActionMovie> list) {
         this.context = context;
         this.list = list;
     }
@@ -36,7 +34,6 @@ public class FoodAdapter extends BaseAdapter {
     
     @Override
     public long getItemId(int arg0) {
-        // TODO Auto-generated method stub
         return arg0;
     }
     
@@ -45,15 +42,14 @@ public class FoodAdapter extends BaseAdapter {
         if (convertView == null) {
             convertView = LayoutInflater.from(context).inflate(R.layout.item_information, parent, false);
         }
-    
-        LoveMovie food = list.get(position);
-        ImageView iv = (ImageView) convertView.findViewById(R.id.iv_item);
+        
+        ActionMovie movie = list.get(position);
         TextView tv_title = (TextView) convertView.findViewById(R.id.tv_item_title);
         TextView tv_content = (TextView) convertView.findViewById(R.id.tv_item_content);
-        
-        iv.setImageResource(MResource.getIdByDrawableName(context, food.drawableName));
-        tv_title.setText(food.name);
-        tv_content.setText(food.describe);
+        TextView tvDate = (TextView) convertView.findViewById(R.id.tv_date);
+        tv_title.setText(movie.name);
+        tv_content.setText(movie.describe);
+        tvDate.setText(movie.date);
         
         return convertView;
     }

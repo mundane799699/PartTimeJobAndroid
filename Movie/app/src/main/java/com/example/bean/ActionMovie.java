@@ -9,5 +9,5 @@ package com.example.bean;
 public class ActionMovie {
     public String name;
     public String describe;
-    public String drawableName;
+    public String date;
 }

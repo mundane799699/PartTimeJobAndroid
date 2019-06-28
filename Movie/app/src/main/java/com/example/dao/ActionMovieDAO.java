@@ -18,7 +18,7 @@ public class ActionMovieDAO {
     }
     
     public List<ActionMovie> queryAllMovie() {
-        String sql = "select * from tb_scene";
+        String sql = "select * from tb_action_movie";
         Cursor cursor = null;
         List<ActionMovie> sceneList = new ArrayList<ActionMovie>();
         try {
@@ -27,7 +27,7 @@ public class ActionMovieDAO {
                 ActionMovie scene = new ActionMovie();
                 scene.name = cursor.getString(cursor.getColumnIndex("name"));
                 scene.describe = cursor.getString(cursor.getColumnIndex("describe"));
-                scene.drawableName = cursor.getString(cursor.getColumnIndex("drawableName"));
+                scene.date = cursor.getString(cursor.getColumnIndex("date"));
                 sceneList.add(scene);
             }
             return sceneList;
@@ -50,8 +50,8 @@ public class ActionMovieDAO {
             ContentValues values = new ContentValues();
             values.put("name", scene.name);
             values.put("describe", scene.describe);
-            values.put("drawableName", scene.drawableName);
-            db.insert("tb_scene", null, values);
+            values.put("date", scene.date);
+            db.insert("tb_action_movie", null, values);
             db.setTransactionSuccessful(); // 事物成功， 一次写入数据库， 这一句真正到数据库里
         } catch (Exception e) {
             e.printStackTrace();

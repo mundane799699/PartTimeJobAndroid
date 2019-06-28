@@ -6,7 +6,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.ListView;
-import com.example.adapter.SongAdapter;
+import com.example.adapter.BianJianAdapter;
 import com.example.bean.BianJian;
 import com.example.dao.BianjianDao;
 import java.util.ArrayList;
@@ -16,7 +16,7 @@ public class BianJianListActivity extends Activity {
     
     private ListView mLv;
     private List<BianJian> mList = new ArrayList<BianJian>();
-    private SongAdapter mAdapter;
+    private BianJianAdapter mAdapter;
     private BianjianDao mDao;
     private View mBtnAdd;
     
@@ -33,7 +33,7 @@ public class BianJianListActivity extends Activity {
                 goToAddSongActivity();
             }
         });
-        mAdapter = new SongAdapter(this, mList);
+        mAdapter = new BianJianAdapter(this, mList);
         mLv.setAdapter(mAdapter);
     }
     

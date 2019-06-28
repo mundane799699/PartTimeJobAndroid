@@ -17,8 +17,8 @@ public class LoveMovieDAO {
         db = helper.getWritableDatabase();
     }
     
-    public List<LoveMovie> queryAllFood() {
-        String sql = "select * from tb_food";
+    public List<LoveMovie> queryAllMovie() {
+        String sql = "select * from tb_love_movie";
         Cursor cursor = null;
         List<LoveMovie> foodList = new ArrayList<LoveMovie>();
         try {
@@ -27,7 +27,7 @@ public class LoveMovieDAO {
                 LoveMovie food = new LoveMovie();
                 food.name = cursor.getString(cursor.getColumnIndex("name"));
                 food.describe = cursor.getString(cursor.getColumnIndex("describe"));
-                food.drawableName = cursor.getString(cursor.getColumnIndex("drawableName"));
+                food.date = cursor.getString(cursor.getColumnIndex("date"));
                 foodList.add(food);
             }
             return foodList;
@@ -50,8 +50,8 @@ public class LoveMovieDAO {
             ContentValues values = new ContentValues();
             values.put("name", food.name);
             values.put("describe", food.describe);
-            values.put("drawableName", food.drawableName);
-            db.insert("tb_food", null, values);
+            values.put("date", food.date);
+            db.insert("tb_love_movie", null, values);
             db.setTransactionSuccessful(); // 事物成功， 一次写入数据库， 这一句真正到数据库里
         } catch (Exception e) {
             e.printStackTrace();

@@ -42,10 +42,10 @@
         </activity>
         <activity android:name=".LoveMovieActivity">
         </activity>
-        <activity android:name=".ArchitectureActivity">
-        </activity>
         <activity android:name=".SocketActivity"/>
         <activity android:name=".AddBianjianActivity"/>
+        <activity android:name=".AddActionMovieActivity"/>
+        <activity android:name=".AddLoveMovieActivity"/>
     </application>
 
 </manifest>

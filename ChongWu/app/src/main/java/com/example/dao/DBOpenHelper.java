@@ -30,6 +30,9 @@ public class DBOpenHelper extends SQLiteOpenHelper {
     
         String chongwuSql = "create table tb_chongwu (name text, type text, size text)";
         db.execSQL(chongwuSql);
+    
+        String shangjiaSql = "create table tb_shangjia (name text, address text, phone text)";
+        db.execSQL(shangjiaSql);
     }
     
     @Override

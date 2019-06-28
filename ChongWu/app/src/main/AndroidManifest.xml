@@ -64,6 +64,8 @@
         <activity android:name="com.example.SocketActivity"/>
         <activity android:name="com.example.ChongwuListActivity"/>
         <activity android:name="com.example.AddChongwuActivity"/>
+        <activity android:name=".AddShangjiaActivity"/>
+        <activity android:name=".ShangjiaListActivity"/>
     </application>
 
 </manifest>

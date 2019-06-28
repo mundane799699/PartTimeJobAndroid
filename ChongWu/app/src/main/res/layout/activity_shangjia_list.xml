@@ -20,7 +20,7 @@
         android:id="@+id/btn_add"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="收藏新宠物"
+        android:text="添加宠物店"
         />
 
 </LinearLayout>

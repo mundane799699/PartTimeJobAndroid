@@ -25,6 +25,13 @@ public class MainActivity extends Activity implements OnClickListener {
         
             }
         });
+        
+        findViewById(R.id.btn_store).setOnClickListener(new OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(MainActivity.this, ShangjiaListActivity.class));
+            }
+        });
     }
     
     private void goToChongwuListActivity() {

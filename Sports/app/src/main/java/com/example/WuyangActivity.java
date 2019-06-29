@@ -4,21 +4,20 @@ import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.AdapterView;
-import android.widget.AdapterView.OnItemClickListener;
+import android.view.View.OnClickListener;
 import android.widget.ListView;
-import com.example.adapter.SceneAdapter;
+import com.example.adapter.WuYangAdapter;
 import com.example.bean.WuyangYundong;
-import com.example.dao.ActionMovieDAO;
+import com.example.dao.WuyangDAO;
 import java.util.ArrayList;
 import java.util.List;
 
-public class WuyangActivity extends Activity implements OnItemClickListener {
+public class WuyangActivity extends Activity {
     
     private ListView lv_strategy;
     private List<WuyangYundong> mDataList = new ArrayList<WuyangYundong>();
-    private ActionMovieDAO mActionMovie;
-    private SceneAdapter mAdapter;
+    private WuyangDAO mDao;
+    private WuYangAdapter mAdapter;
     
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,48 +25,37 @@ public class WuyangActivity extends Activity implements OnItemClickListener {
         setContentView(R.layout.activity_scenic);
         
         lv_strategy = (ListView) findViewById(R.id.lv_strategy);
-        mAdapter = new SceneAdapter(this, mDataList);
+        mAdapter = new WuYangAdapter(this, mDataList);
         lv_strategy.setAdapter(mAdapter);
-        lv_strategy.setOnItemClickListener(this);
-        initData();
+        mDao = new WuyangDAO(this);
+        
+        findViewById(R.id.btn_add).setOnClickListener(new OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                addWuyang();
+            }
+        });
     }
     
-    private void initData() {
-        mActionMovie = new ActionMovieDAO(this);
-        List<WuyangYundong> list = mActionMovie.queryAllMovie();
-        if (list == null || list.isEmpty()) {
-            initDaoData();
-        }
-        list = mActionMovie.queryAllMovie();
-        mDataList.clear();
-        mDataList.addAll(list);
-        mAdapter.notifyDataSetChanged();
-    }
-    
-    private void initDaoData() {
-        WuyangYundong yundong1 = new WuyangYundong();
-        yundong1.drawableName = "juzhong";
-        yundong1.name = getString(R.string.juzho);
-        yundong1.describe =
-                getString(R.string.juhzongd);
-        mActionMovie.add(yundong1);
-        
-        WuyangYundong yundong2 = new WuyangYundong();
-        yundong2.drawableName = "fuwocheng";
-        yundong2.name = getString(R.string.fwc);
-        yundong2.describe =
-                getString(R.string.fwcd);
-        mActionMovie.add(yundong2);
-        
+    private void addWuyang() {
+        startActivity(new Intent(this, AddWuyangActivity.class));
     }
     
     @Override
-    public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-        Intent intent = new Intent(this, DetailActivity.class);
-        WuyangYundong scene = mDataList.get(position);
-        intent.putExtra("image", scene.drawableName);
-        intent.putExtra("title", scene.name);
-        intent.putExtra("content", scene.describe);
-        startActivity(intent);
+    protected void onResume() {
+        super.onResume();
+        queryData();
+    }
+    
+    private void queryData() {
+        List<WuyangYundong> list = mDao.queryAll();
+        if (list != null && !list.isEmpty()) {
+            mDataList.clear();
+            mDataList.addAll(list);
+        }
+        list = mDao.queryAll();
+        mDataList.clear();
+        mDataList.addAll(list);
+        mAdapter.notifyDataSetChanged();
     }
 }

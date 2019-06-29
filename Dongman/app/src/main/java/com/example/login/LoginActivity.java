@@ -67,9 +67,9 @@ public class LoginActivity extends BaseActivity {
         String password = AppPreference.getPassword();
         String username = AppPreference.getUsername();
         UserDAO pwdDAO = new UserDAO(this);
-        if (pwdDAO.find(username, password) != null) {
-            startActivity(new Intent(this, MainActivity.class));
-            finish();
-        }
+        //if (pwdDAO.find(username, password) != null) {
+        //    startActivity(new Intent(this, MainActivity.class));
+        //    finish();
+        //}
     }
 }

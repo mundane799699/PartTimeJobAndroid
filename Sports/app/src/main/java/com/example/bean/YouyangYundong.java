@@ -9,5 +9,5 @@ package com.example.bean;
 public class YouyangYundong {
     public String name;
     public String describe;
-    public String drawableName;
+    public String effect;
 }

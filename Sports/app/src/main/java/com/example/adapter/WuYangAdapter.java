@@ -5,19 +5,17 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
-import android.widget.ImageView;
 import android.widget.TextView;
 import com.example.R;
-import com.example.Utils.MResource;
-import com.example.bean.YouyangYundong;
+import com.example.bean.WuyangYundong;
 import java.util.List;
 
-public class FoodAdapter extends BaseAdapter {
+public class WuYangAdapter extends BaseAdapter {
     
     private Context context;
-    private List<YouyangYundong> list;
+    private List<WuyangYundong> list;
     
-    public FoodAdapter(Context context, List<YouyangYundong> list) {
+    public WuYangAdapter(Context context, List<WuyangYundong> list) {
         this.context = context;
         this.list = list;
     }
@@ -45,15 +43,14 @@ public class FoodAdapter extends BaseAdapter {
         if (convertView == null) {
             convertView = LayoutInflater.from(context).inflate(R.layout.item_information, parent, false);
         }
-    
-        YouyangYundong food = list.get(position);
-        ImageView iv = (ImageView) convertView.findViewById(R.id.iv_item);
+        
+        WuyangYundong yundong = list.get(position);
         TextView tv_title = (TextView) convertView.findViewById(R.id.tv_item_title);
         TextView tv_content = (TextView) convertView.findViewById(R.id.tv_item_content);
-        
-        iv.setImageResource(MResource.getIdByDrawableName(context, food.drawableName));
-        tv_title.setText(food.name);
-        tv_content.setText(food.describe);
+        TextView tvEffect = (TextView) convertView.findViewById(R.id.tv_effect);
+        tv_title.setText(yundong.name);
+        tv_content.setText(yundong.describe);
+        tvEffect.setText(yundong.effect);
         
         return convertView;
     }

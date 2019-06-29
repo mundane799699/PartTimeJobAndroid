@@ -4,33 +4,33 @@ import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
-import com.example.bean.Architecture;
+import com.example.bean.WuyangYundong;
 import java.util.ArrayList;
 import java.util.List;
 
-public class ArchitectureDAO {
+public class WuyangDAO {
     private DBOpenHelper helper;
     private SQLiteDatabase db;
     
-    public ArchitectureDAO(Context context) {
+    public WuyangDAO(Context context) {
         helper = new DBOpenHelper(context);
         db = helper.getWritableDatabase();
     }
     
-    public List<Architecture> queryAllArchitecture() {
-        String sql = "select * from tb_architecture";
+    public List<WuyangYundong> queryAll() {
+        String sql = "select * from tb_wuyang";
         Cursor cursor = null;
-        List<Architecture> ArchitectureList = new ArrayList<Architecture>();
+        List<WuyangYundong> sceneList = new ArrayList<WuyangYundong>();
         try {
             cursor = db.rawQuery(sql, null);
             while (cursor.moveToNext()) {
-                Architecture Architecture = new Architecture();
-                Architecture.name = cursor.getString(cursor.getColumnIndex("name"));
-                Architecture.describe = cursor.getString(cursor.getColumnIndex("describe"));
-                Architecture.drawableName = cursor.getString(cursor.getColumnIndex("drawableName"));
-                ArchitectureList.add(Architecture);
+                WuyangYundong scene = new WuyangYundong();
+                scene.name = cursor.getString(cursor.getColumnIndex("name"));
+                scene.describe = cursor.getString(cursor.getColumnIndex("describe"));
+                scene.effect = cursor.getString(cursor.getColumnIndex("effect"));
+                sceneList.add(scene);
             }
-            return ArchitectureList;
+            return sceneList;
         } catch (Exception e) {
             e.printStackTrace();
         } finally {
@@ -44,14 +44,14 @@ public class ArchitectureDAO {
     }
     
     // 增
-    public void add(Architecture Architecture) {
+    public void add(WuyangYundong scene) {
         try {
             db.beginTransaction(); // 以事物的方式插入数据库，这样数据库只需要打开关闭一次
             ContentValues values = new ContentValues();
-            values.put("name", Architecture.name);
-            values.put("describe", Architecture.describe);
-            values.put("drawableName", Architecture.drawableName);
-            db.insert("tb_architecture", null, values);
+            values.put("name", scene.name);
+            values.put("describe", scene.describe);
+            values.put("effect", scene.effect);
+            db.insert("tb_wuyang", null, values);
             db.setTransactionSuccessful(); // 事物成功， 一次写入数据库， 这一句真正到数据库里
         } catch (Exception e) {
             e.printStackTrace();

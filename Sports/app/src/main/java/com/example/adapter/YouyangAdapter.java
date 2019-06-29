@@ -1,24 +1,21 @@
 package com.example.adapter;
 
-import com.example.R;
-import com.example.Utils.MResource;
-import com.example.bean.WuyangYundong;
-import java.util.List;
-
 import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
-import android.widget.ImageView;
 import android.widget.TextView;
+import com.example.R;
+import com.example.bean.YouyangYundong;
+import java.util.List;
 
-public class SceneAdapter extends BaseAdapter {
+public class YouyangAdapter extends BaseAdapter {
     
     private Context context;
-    private List<WuyangYundong> list;
+    private List<YouyangYundong> list;
     
-    public SceneAdapter(Context context, List<WuyangYundong> list) {
+    public YouyangAdapter(Context context, List<YouyangYundong> list) {
         this.context = context;
         this.list = list;
     }
@@ -46,15 +43,15 @@ public class SceneAdapter extends BaseAdapter {
         if (convertView == null) {
             convertView = LayoutInflater.from(context).inflate(R.layout.item_information, parent, false);
         }
-        
-        WuyangYundong scene = list.get(position);
-        ImageView iv = (ImageView) convertView.findViewById(R.id.iv_item);
+    
+        YouyangYundong yundong = list.get(position);
         TextView tv_title = (TextView) convertView.findViewById(R.id.tv_item_title);
         TextView tv_content = (TextView) convertView.findViewById(R.id.tv_item_content);
+        TextView tvEffect = (TextView) convertView.findViewById(R.id.tv_effect);
         
-        iv.setImageResource(MResource.getIdByDrawableName(context, scene.drawableName));
-        tv_title.setText(scene.name);
-        tv_content.setText(scene.describe);
+        tv_title.setText(yundong.name);
+        tv_content.setText(yundong.describe);
+        tvEffect.setText(yundong.effect);
         
         return convertView;
     }

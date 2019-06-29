@@ -57,13 +57,11 @@
             android:name="com.example.YouyangActivity"
             >
         </activity>
-        <activity
-            android:name="com.example.ArchitectureActivity"
-            >
-        </activity>
         <activity android:name="com.example.SocketActivity"/>
         <activity android:name="com.example.AddContactActivity"/>
         <activity android:name="com.example.ContactListActivity"/>
+        <activity android:name=".AddYouyangActivity"/>
+        <activity android:name=".AddWuyangActivity"/>
     </application>
 
 </manifest>

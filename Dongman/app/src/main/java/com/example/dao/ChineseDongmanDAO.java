@@ -8,17 +8,17 @@ import com.example.bean.ChineseDongman;
 import java.util.ArrayList;
 import java.util.List;
 
-public class ActionMovieDAO {
+public class ChineseDongmanDAO {
     private DBOpenHelper helper;
     private SQLiteDatabase db;
     
-    public ActionMovieDAO(Context context) {
+    public ChineseDongmanDAO(Context context) {
         helper = new DBOpenHelper(context);
         db = helper.getWritableDatabase();
     }
     
     public List<ChineseDongman> queryAllMovie() {
-        String sql = "select * from tb_scene";
+        String sql = "select * from tb_chinese_dongman";
         Cursor cursor = null;
         List<ChineseDongman> sceneList = new ArrayList<ChineseDongman>();
         try {
@@ -27,7 +27,7 @@ public class ActionMovieDAO {
                 ChineseDongman scene = new ChineseDongman();
                 scene.name = cursor.getString(cursor.getColumnIndex("name"));
                 scene.describe = cursor.getString(cursor.getColumnIndex("describe"));
-                scene.drawableName = cursor.getString(cursor.getColumnIndex("drawableName"));
+                scene.date = cursor.getString(cursor.getColumnIndex("date"));
                 sceneList.add(scene);
             }
             return sceneList;
@@ -50,8 +50,8 @@ public class ActionMovieDAO {
             ContentValues values = new ContentValues();
             values.put("name", scene.name);
             values.put("describe", scene.describe);
-            values.put("drawableName", scene.drawableName);
-            db.insert("tb_scene", null, values);
+            values.put("date", scene.date);
+            db.insert("tb_chinese_dongman", null, values);
             db.setTransactionSuccessful(); // 事物成功， 一次写入数据库， 这一句真正到数据库里
         } catch (Exception e) {
             e.printStackTrace();

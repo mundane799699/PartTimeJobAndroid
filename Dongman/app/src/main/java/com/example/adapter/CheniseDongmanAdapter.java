@@ -5,19 +5,17 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
-import android.widget.ImageView;
 import android.widget.TextView;
 import com.example.R;
-import com.example.Utils.MResource;
-import com.example.bean.GuowaiDongman;
+import com.example.bean.ChineseDongman;
 import java.util.List;
 
-public class FoodAdapter extends BaseAdapter {
+public class CheniseDongmanAdapter extends BaseAdapter {
     
     private Context context;
-    private List<GuowaiDongman> list;
+    private List<ChineseDongman> list;
     
-    public FoodAdapter(Context context, List<GuowaiDongman> list) {
+    public CheniseDongmanAdapter(Context context, List<ChineseDongman> list) {
         this.context = context;
         this.list = list;
     }
@@ -45,16 +43,14 @@ public class FoodAdapter extends BaseAdapter {
         if (convertView == null) {
             convertView = LayoutInflater.from(context).inflate(R.layout.item_information, parent, false);
         }
-    
-        GuowaiDongman food = list.get(position);
-        ImageView iv = (ImageView) convertView.findViewById(R.id.iv_item);
+        
+        ChineseDongman dongman = list.get(position);
         TextView tv_title = (TextView) convertView.findViewById(R.id.tv_item_title);
         TextView tv_content = (TextView) convertView.findViewById(R.id.tv_item_content);
-        
-        iv.setImageResource(MResource.getIdByDrawableName(context, food.drawableName));
-        tv_title.setText(food.name);
-        tv_content.setText(food.describe);
-        
+        TextView tvDate = (TextView) convertView.findViewById(R.id.tv_date);
+        tv_title.setText(dongman.name);
+        tv_content.setText(dongman.describe);
+        tvDate.setText(dongman.date);
         return convertView;
     }
 }

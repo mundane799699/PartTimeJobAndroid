@@ -57,14 +57,12 @@
             android:name="com.example.ForeignDongmanActivity"
             >
         </activity>
-        <activity
-            android:name="com.example.ArchitectureActivity"
-            >
-        </activity>
         <activity android:name="com.example.SocketActivity"/>
         <activity android:name=".AddBianjianActivity"/>
 
         <activity android:name=".BianJianListActivity"/>
+        <activity android:name=".AddChineseDongmanActivity"/>
+        <activity android:name=".AddForeignDongmanActivity"/>
     </application>
 
 </manifest>

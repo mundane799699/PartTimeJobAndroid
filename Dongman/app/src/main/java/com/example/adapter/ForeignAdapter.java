@@ -1,24 +1,21 @@
 package com.example.adapter;
 
-import com.example.R;
-import com.example.Utils.MResource;
-import com.example.bean.ChineseDongman;
-import java.util.List;
-
 import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
-import android.widget.ImageView;
 import android.widget.TextView;
+import com.example.R;
+import com.example.bean.GuowaiDongman;
+import java.util.List;
 
-public class SceneAdapter extends BaseAdapter {
+public class ForeignAdapter extends BaseAdapter {
     
     private Context context;
-    private List<ChineseDongman> list;
+    private List<GuowaiDongman> list;
     
-    public SceneAdapter(Context context, List<ChineseDongman> list) {
+    public ForeignAdapter(Context context, List<GuowaiDongman> list) {
         this.context = context;
         this.list = list;
     }
@@ -47,14 +44,13 @@ public class SceneAdapter extends BaseAdapter {
             convertView = LayoutInflater.from(context).inflate(R.layout.item_information, parent, false);
         }
         
-        ChineseDongman scene = list.get(position);
-        ImageView iv = (ImageView) convertView.findViewById(R.id.iv_item);
+        GuowaiDongman dongman = list.get(position);
         TextView tv_title = (TextView) convertView.findViewById(R.id.tv_item_title);
         TextView tv_content = (TextView) convertView.findViewById(R.id.tv_item_content);
-        
-        iv.setImageResource(MResource.getIdByDrawableName(context, scene.drawableName));
-        tv_title.setText(scene.name);
-        tv_content.setText(scene.describe);
+        TextView tvDate = (TextView) convertView.findViewById(R.id.tv_date);
+        tv_title.setText(dongman.name);
+        tv_content.setText(dongman.describe);
+        tvDate.setText(dongman.date);
         
         return convertView;
     }

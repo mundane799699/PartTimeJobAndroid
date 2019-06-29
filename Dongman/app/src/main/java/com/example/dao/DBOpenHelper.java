@@ -19,10 +19,10 @@ public class DBOpenHelper extends SQLiteOpenHelper {
         String userSql = "create table tb_user (user varchar(20),password varchar(20))";
         db.execSQL(userSql);
         
-        String secneSql = "create table tb_scene (name text, describe text, drawableName text)";
+        String secneSql = "create table tb_chinese_dongman (name text, describe text, date text)";
         db.execSQL(secneSql);
     
-        String foodSql = "create table tb_food (name text, describe text, drawableName text)";
+        String foodSql = "create table tb_foreign_dongman (name text, describe text, date text)";
         db.execSQL(foodSql);
     
         String arcSql = "create table tb_architecture (name text, describe text, drawableName text)";

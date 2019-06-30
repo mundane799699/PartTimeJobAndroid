@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    android:versionCode="1"
+    android:versionName="1.0"
+    package="com.example.daliantear">
+
+    <uses-sdk
+        android:minSdkVersion="8"
+        android:targetSdkVersion="8"/>
+
+    <application
+        android:allowBackup="true"
+        android:icon="@drawable/ic_launcher"
+        android:label="@string/app_name"
+        android:theme="@style/AppTheme">
+        <activity
+            android:name="com.example.daliantear.MainActivity"
+            android:label="@string/app_name">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.example.daliantear.dengru"
+            android:label="dengru">
+        </activity>
+        <activity
+            android:name="com.example.daliantear.zhuce"
+            android:label="zhuce">
+        </activity>
+        <activity
+            android:name="com.example.daliantear.lifu"
+            android:label="lifu">
+        </activity>
+        <activity
+            android:name="com.example.daliantear.xingzhi"
+            android:label="xingzhi">
+        </activity>
+        <activity
+            android:name="com.example.daliantear.Richang"
+            android:label="Richang">
+        </activity>
+        <activity
+            android:name="com.example.daliantear.Zixun"
+            android:label="Zixun">
+        </activity>
+        <activity android:name=".fuzhuang.FuzhuangListActivity"/>
+        <activity android:name=".fuzhuang.AddFuzhuangActivity"/>
+        <activity android:name=".shop.ShopListActivity"/>
+        <activity android:name=".shop.AddShopActivity"/>
+    </application>
+    <uses-permission android:name="android.permission.INTERNET"/>
+</manifest>

@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    >
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:src="@drawable/blogo"
+        />
+    <TableLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:shrinkColumns="4"
+        android:stretchColumns="2"
+        >
+        <TableRow>
+            <ImageButton
+                android:id="@+id/xingzhia"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/xingzhi"
+                android:onClick="submit_xing"
+                />
+            <ImageButton
+                android:id="@+id/chaodai"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/chaodai"
+                />
+            <ImageButton
+                android:id="@+id/lishi"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/lishi"
+                />
+            <ImageButton
+                android:id="@+id/kehu"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/jiage"
+                android:onClick="sumbit_kh"
+                />
+        </TableRow>
+        <TableRow>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:autoLink="all"
+                android:text=" 服装形式"
+                android:textColor="#CA8EFF"
+                android:textSize="16sp"
+                />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text=" 服装样式"
+                android:textColor="#FFD1A4"
+                android:textSize="16sp"
+                />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text=" 服装材质"
+                android:textColor="#FF95CA"
+                android:textSize="16sp"
+                />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text=" 客户咨询"
+                android:textColor="#97CBFF"
+                android:textSize="16sp"
+                />
+        </TableRow>
+    </TableLayout>
+    <TableLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:shrinkColumns="4"
+        android:stretchColumns="2"
+        >
+
+        <TableRow>
+
+            <Button
+                android:id="@+id/li"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:onClick="sumbit_lifu"
+                android:text="礼服"
+                />
+
+            <Button
+                android:id="@+id/ri"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:onClick="sumbit_rc"
+                android:text="日常"
+                />
+
+            <ImageButton
+                android:id="@+id/gufeng"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/gufeng"
+                />
+
+        </TableRow>
+
+        <TableRow>
+            <Button
+                android:id="@+id/gu"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="古风"
+                />
+
+            <Button
+                android:id="@+id/pei"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="配饰"
+                />
+
+            <Button
+                android:id="@+id/btn_collect_clothes"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="收藏的汉服"
+                />
+
+            <Button
+                android:id="@+id/btn_collect_shop"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="收藏的汉服店"
+                />
+
+        </TableRow>
+    </TableLayout>
+    <TextView
+        android:id="@+id/text"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/wei"
+        android:marqueeRepeatLimit="marquee_forever"
+        android:text="敬请期待...."
+        />
+</LinearLayout>

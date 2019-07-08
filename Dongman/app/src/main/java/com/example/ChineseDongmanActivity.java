@@ -1,18 +1,18 @@
 package com.example;
 
-import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.ListView;
 import com.example.adapter.CheniseDongmanAdapter;
+import com.example.base.BaseActivity;
 import com.example.bean.ChineseDongman;
 import com.example.dao.ChineseDongmanDAO;
 import java.util.ArrayList;
 import java.util.List;
 
-public class ChineseDongmanActivity extends Activity {
+public class ChineseDongmanActivity extends BaseActivity {
     
     private ListView lv_strategy;
     private List<ChineseDongman> mDataList = new ArrayList<ChineseDongman>();

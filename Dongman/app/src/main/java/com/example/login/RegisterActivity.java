@@ -8,19 +8,21 @@ import android.widget.EditText;
 import android.widget.Toast;
 import com.example.R;
 import com.example.base.BaseActivity;
+import com.example.bean.User;
 import com.example.dao.UserDAO;
 
 public class RegisterActivity extends BaseActivity {
-
+    
     private Button mBtnRegister;
     private EditText mEtUserName;
     private EditText mEtPwd;
     private EditText mEtPwdAgain;
+    
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_register);
-
+        
         mBtnRegister = (Button) findViewById(R.id.btn_register);
         mEtUserName = (EditText) findViewById(R.id.et_username);
         mEtPwd = (EditText) findViewById(R.id.et_pwd);
@@ -42,14 +44,10 @@ public class RegisterActivity extends BaseActivity {
                     showMessage(getString(R.string.passwordnotsame));
                     return;
                 }
-                if (pwdDAO.add(username, password) == null) {
-                    Toast.makeText(RegisterActivity.this, getString(R.string.registersuccess), Toast.LENGTH_SHORT).show();
-                    finish();
-                } else {
-                    Toast.makeText(RegisterActivity.this, getString(R.string.registerfail), Toast.LENGTH_SHORT).show();
-                }
+                pwdDAO.insert(new User(username, password));
+                Toast.makeText(RegisterActivity.this, getString(R.string.registersuccess), Toast.LENGTH_SHORT).show();
+                finish();
             }
         });
     }
-
 }

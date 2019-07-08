@@ -1,6 +1,6 @@
 package com.example.base;
 
-import android.app.Activity;
+import android.support.v7.app.AppCompatActivity;
 import android.widget.Toast;
 
 /**
@@ -9,7 +9,7 @@ import android.widget.Toast;
  * @author fangyuan
  * @date 2019-06-23
  */
-public class BaseActivity extends Activity {
+public class BaseActivity extends AppCompatActivity {
     public void showMessage(String message) {
         Toast.makeText(this, message, Toast.LENGTH_SHORT).show();
     }

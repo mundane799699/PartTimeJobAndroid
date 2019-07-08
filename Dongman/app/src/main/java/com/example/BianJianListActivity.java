@@ -1,18 +1,18 @@
 package com.example;
 
-import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.ListView;
 import com.example.adapter.BianjianAdapter;
+import com.example.base.BaseActivity;
 import com.example.bean.BianJian;
 import com.example.dao.BianjianDao;
 import java.util.ArrayList;
 import java.util.List;
 
-public class BianJianListActivity extends Activity {
+public class BianJianListActivity extends BaseActivity {
     
     private ListView mLv;
     private List<BianJian> mList = new ArrayList<BianJian>();

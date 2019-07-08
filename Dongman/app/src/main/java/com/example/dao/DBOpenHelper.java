@@ -16,7 +16,7 @@ public class DBOpenHelper extends SQLiteOpenHelper {
     @Override
     public void onCreate(SQLiteDatabase db) {
         
-        String userSql = "create table tb_user (user varchar(20),password varchar(20))";
+        String userSql = "create table tb_user (_id integer primary key AUTOINCREMENT, user varchar(20),password varchar(20))";
         db.execSQL(userSql);
         
         String secneSql = "create table tb_chinese_dongman (name text, describe text, date text)";

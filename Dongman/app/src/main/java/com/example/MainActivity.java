@@ -1,13 +1,14 @@
 package com.example;
 
-import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.view.View.OnClickListener;
 import com.example.Utils.SPUtil;
+import com.example.base.BaseActivity;
+import com.example.manageuser.UserListActivity;
 
-public class MainActivity extends Activity implements OnClickListener {
+public class MainActivity extends BaseActivity implements OnClickListener {
     
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -25,6 +26,16 @@ public class MainActivity extends Activity implements OnClickListener {
             
             }
         });
+        findViewById(R.id.btn_manage_user).setOnClickListener(new OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                manageUser();
+            }
+        });
+    }
+    
+    private void manageUser() {
+        startActivity(new Intent(this, UserListActivity.class));
     }
     
     private void goToBianjianListActivity() {

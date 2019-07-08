@@ -22,29 +22,18 @@
             />
 
         <Button
-            android:id="@+id/btn_chinese"
-            android:text="中国动漫"
+            android:id="@+id/btn_manage_dongman"
+            android:text="动漫管理"
             android:layout_width="match_parent"
             android:layout_height="wrap_content" />
 
+
         <Button
-            android:id="@+id/btn_foreign"
-            android:text="国外动漫"
+            android:id="@+id/btn_dongmang_daquan"
+            android:text="动漫推荐"
             android:layout_width="match_parent"
             android:layout_height="wrap_content" />
 
-        <Button
-            android:id="@+id/btn_socket"
-            android:text="socket通信"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
-
-        <Button
-            android:id="@+id/btn_bianjian"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="查看所有便笺"
-            />
 
 
 

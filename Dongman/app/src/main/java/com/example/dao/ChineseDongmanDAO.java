@@ -17,20 +17,22 @@ public class ChineseDongmanDAO {
         db = helper.getWritableDatabase();
     }
     
-    public List<ChineseDongman> queryAllMovie() {
+    public List<ChineseDongman> queryAll() {
         String sql = "select * from tb_chinese_dongman";
         Cursor cursor = null;
-        List<ChineseDongman> sceneList = new ArrayList<ChineseDongman>();
+        List<ChineseDongman> list = new ArrayList<ChineseDongman>();
         try {
             cursor = db.rawQuery(sql, null);
             while (cursor.moveToNext()) {
-                ChineseDongman scene = new ChineseDongman();
-                scene.name = cursor.getString(cursor.getColumnIndex("name"));
-                scene.describe = cursor.getString(cursor.getColumnIndex("describe"));
-                scene.date = cursor.getString(cursor.getColumnIndex("date"));
-                sceneList.add(scene);
+                ChineseDongman dongman = new ChineseDongman();
+                dongman.id = cursor.getInt(cursor.getColumnIndex("_id"));
+                dongman.name = cursor.getString(cursor.getColumnIndex("name"));
+                dongman.name = cursor.getString(cursor.getColumnIndex("name"));
+                dongman.describe = cursor.getString(cursor.getColumnIndex("describe"));
+                dongman.date = cursor.getString(cursor.getColumnIndex("date"));
+                list.add(dongman);
             }
-            return sceneList;
+            return list;
         } catch (Exception e) {
             e.printStackTrace();
         } finally {
@@ -44,13 +46,13 @@ public class ChineseDongmanDAO {
     }
     
     // 增
-    public void add(ChineseDongman scene) {
+    public void add(ChineseDongman dongman) {
         try {
             db.beginTransaction(); // 以事物的方式插入数据库，这样数据库只需要打开关闭一次
             ContentValues values = new ContentValues();
-            values.put("name", scene.name);
-            values.put("describe", scene.describe);
-            values.put("date", scene.date);
+            values.put("name", dongman.name);
+            values.put("describe", dongman.describe);
+            values.put("date", dongman.date);
             db.insert("tb_chinese_dongman", null, values);
             db.setTransactionSuccessful(); // 事物成功， 一次写入数据库， 这一句真正到数据库里
         } catch (Exception e) {

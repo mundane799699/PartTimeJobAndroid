@@ -19,8 +19,8 @@ public class DBOpenHelper extends SQLiteOpenHelper {
         String userSql = "create table tb_user (_id integer primary key AUTOINCREMENT, user varchar(20),password varchar(20))";
         db.execSQL(userSql);
         
-        String secneSql = "create table tb_chinese_dongman (name text, describe text, date text)";
-        db.execSQL(secneSql);
+        String chineseDongmanSql = "create table tb_chinese_dongman (_id integer primary key AUTOINCREMENT, name text, describe text, date text)";
+        db.execSQL(chineseDongmanSql);
     
         String foodSql = "create table tb_foreign_dongman (name text, describe text, date text)";
         db.execSQL(foodSql);

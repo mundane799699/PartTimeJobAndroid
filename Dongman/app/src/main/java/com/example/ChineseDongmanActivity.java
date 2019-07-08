@@ -14,19 +14,19 @@ import java.util.List;
 
 public class ChineseDongmanActivity extends BaseActivity {
     
-    private ListView lv_strategy;
-    private List<ChineseDongman> mDataList = new ArrayList<ChineseDongman>();
-    private ChineseDongmanDAO mActionMovie;
+    private ListView mLv;
+    private List<ChineseDongman> mDataList = new ArrayList<>();
+    private ChineseDongmanDAO mDao;
     private CheniseDongmanAdapter mAdapter;
     
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_scenic);
-        mActionMovie = new ChineseDongmanDAO(this);
-        lv_strategy = (ListView) findViewById(R.id.lv_strategy);
+        mDao = new ChineseDongmanDAO(this);
+        mLv = findViewById(R.id.lv_strategy);
         mAdapter = new CheniseDongmanAdapter(this, mDataList);
-        lv_strategy.setAdapter(mAdapter);
+        mLv.setAdapter(mAdapter);
         findViewById(R.id.btn_add).setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -42,17 +42,16 @@ public class ChineseDongmanActivity extends BaseActivity {
     }
     
     private void addChineseDongman() {
-    
+        
         startActivity(new Intent(this, AddChineseDongmanActivity.class));
     }
     
     private void queryData() {
-        List<ChineseDongman> list = mActionMovie.queryAllMovie();
+        List<ChineseDongman> list = mDao.queryAll();
         if (list != null && !list.isEmpty()) {
             mDataList.clear();
             mDataList.addAll(list);
         }
         mAdapter.notifyDataSetChanged();
     }
-    
 }

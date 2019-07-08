@@ -1,9 +1,10 @@
-package com.example;
+package com.example.dongman;
 
 import android.os.Bundle;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.EditText;
+import com.example.R;
 import com.example.base.BaseActivity;
 import com.example.bean.ChineseDongman;
 import com.example.dao.ChineseDongmanDAO;

@@ -65,4 +65,14 @@ public class ChineseDongmanDAO {
             }
         }
     }
+    
+    // 删除
+    public void deleteDongman(ChineseDongman dongman) {
+        db.execSQL("delete from tb_chinese_dongman where _id=?", new String[] { String.valueOf(dongman.id) }); //？？？
+    }
+    
+    // 改
+    public void updateDongman(ChineseDongman dongman) {
+        db.execSQL("update tb_chinese_dongman set name=?, describe=?, date=? where _id=?", new Object[] { dongman.name, dongman.describe, dongman.date, dongman.id });
+    }
 }

@@ -82,8 +82,8 @@ public class UserListActivity extends BaseActivity {
     
     private void queryAllUser() {
         List<User> userList = mUserDAO.queryAllUsers();
+        mUserList.clear();
         if (userList != null && !userList.isEmpty()) {
-            mUserList.clear();
             mUserList.addAll(userList);
         }
         mUserAdapter.notifyDataSetChanged();

@@ -13,7 +13,7 @@
 
     <Button
         android:id="@+id/btn_add"
-        android:text="添加中国动漫"
+        android:text="添加动漫"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         />

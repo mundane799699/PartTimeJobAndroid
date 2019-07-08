@@ -3,14 +3,13 @@ package com.example.bean;
 import java.io.Serializable;
 
 /**
- * Scene
+ * Tuijian
  *
  * @author fangyuan
- * @date 2019-06-23
+ * @date 2019-07-08
  */
-public class ChineseDongman implements Serializable {
-    public int id;
+public class Tuijian implements Serializable {
     public String name;
+    public String drawable;
     public String describe;
-    public String date;
 }
